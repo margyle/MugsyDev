@@ -7,7 +7,6 @@ from decafConfig import mysql, dbuser, dbpass, dbdb, dbhost
 import simplejson as json
 
 
-#mysqlUser = 'mugsyDbUser'
 app = Flask(__name__)
 api = Api(app)
 app.config['MYSQL_DATABASE_USER'] = dbuser
