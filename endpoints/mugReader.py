@@ -15,4 +15,5 @@ class readMugRFID(Resource):
 api.add_resource(brewSettings, '/mugReader/')
 
 if __name__ == "__main__":
+	#remove host for production
 	app.run(host= '192.168.1.183')
