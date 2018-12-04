@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, make_response
 from flask_restful import Resource, Api
 from flask.views import MethodView
 from flaskext.mysql import MySQL
-from extensions import mysql, dbuser, dbpass, dbdb, dbhost
+from decafConfig import mysql, dbuser, dbpass, dbdb, dbhost
 import simplejson as json
 
 
