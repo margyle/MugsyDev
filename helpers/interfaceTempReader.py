@@ -2,7 +2,7 @@
 #Will be rewritten for the flask conversion. It Does not impact brewing, only the display!
 import serial
 import shutil
-
+#set up auto address finder, until then enter "ls /dev/tty*" in terminal to find connected serial address
 ser = serial.Serial('/dev/ttyACM0',9600)
 
 f = open('waterTemp.txt','w')
