@@ -1,0 +1,16 @@
+v0.1.1a (2010-05-31)
+  * fixed 100% CPU issue on x64
+  * various other bug fixes
+  * removed pgrep dependency
+  * PID file now in /var/run/
+  * symlink attack vulnerability fixes
+  * other security fixes
+  * code refactoring
+  * remote log uploading via HTTP
+  * lkl and lklk are now llk and llkk to avoid confusion
+  * llk and llkk are now programs that run logkeys-start.sh/-stop.sh scripts
+  * also recognize "HID" USB keyboard devices
+  * bug fixes
+  
+v0.1.0 (2010-01-05)
+  * initial release

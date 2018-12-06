@@ -1,0 +1,15 @@
+-> Add automated testing scripts to verify behaviour and operation
+
+-> Add automated smoke test of keymaps (ensure they can be parsed, at least),
+   and provide and document facility in the code for people to validate
+   keymaps they create.
+
+-> Clean up imported docs in "./docs", remove redundant docs
+
+-> Add support for sending logs via mail
+
+-> Also log title of the focused window
+
+-> Extract clipboard contents
+
+-> Add support for mouse events (i.e. on mouse click the focus may have changed)
