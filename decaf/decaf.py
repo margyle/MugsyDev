@@ -1,4 +1,4 @@
-from models import requestBrewSettings, getCoffeeInfo, barcodeScanner
+from models import BrewSettings, CoffeeInfo, barcodeScanner
 from flask import Flask, request, jsonify, make_response
 from flask_restful import Resource, Api
 from flask.views import MethodView
@@ -20,12 +20,12 @@ mysql.init_app(app)
 #query brew settings by user id
 class brewSettings(Resource):
 	def get(self, userId):
-		return {'getbrewSettings': requestBrewSettings.get(userId)}
+		return {'brewSettings': requestBrewSettings.get(userId)}
 
 #get info about coffee by coffeeTypeID
 class coffeeInfo(Resource):
 	def get(self, coffeeTypeId):
-		return {'getCoffeeInfo': getCoffeeInfo.get(coffeeTypeId)}
+		return {'CoffeeInfo': getCoffeeInfo.get(coffeeTypeId)}
 
 #get coffee info by using the barcode scanner
 class barCode(Resource):
@@ -33,8 +33,8 @@ class barCode(Resource):
 		return {'barcodeScanner': barcodeScanner.get(self)}
 
 
-api.add_resource(brewSettings, '/getBrewSettings/<userId>')
-api.add_resource(coffeeInfo, '/getCoffeeInfo/<coffeeTypeId>')
+api.add_resource(brewSettings, '/BrewSettings/<userId>')
+api.add_resource(coffeeInfo, '/CoffeeInfo/<coffeeTypeId>')
 api.add_resource(barCode, '/barcodeScanner/', methods=['GET'])
 
 
