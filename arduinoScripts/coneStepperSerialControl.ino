@@ -1,6 +1,6 @@
 //need to switch AccelStepper lib as well as integrate into the larger runtime.
 //200 steps = one rotation of stepper, 1600 steps = one rotation of pour over cone
-//commands can be chained
+//commands are chainable
 //format = <CW,1600,60.00> (Direction, Steps, Speed)
 //Chained example: <CW,800,60.00><CC,800,60.00><CW,800,60.00><CC,1600,60.00><CW,1600,60.00>
 //lots of this is snagged from the awesome serial control tutorial by Robin2 @ http://forum.arduino.cc/index.php?topic=396450.0
@@ -36,7 +36,7 @@ void loop() {
     if (newData == true) {
         strcpy(tempChars, receivedChars);
         parseData();
-        showParsedData();
+        moveCone();
         newData = false;
     }
 }
@@ -96,7 +96,7 @@ void parseData() {      // split the data into its parts
 //serial command format:
 ///<CW,1600,60.00>
 //<CW,800,60.00><CC,800,60.00><CW,800,60.00><CC,1600,60.00><CW,1600,60.00>
-void showParsedData() {
+void moveCone() {
     Serial.print("Command Recieved: ");
     Serial.println(receivedChars);
     Serial.print("Direction: ");
