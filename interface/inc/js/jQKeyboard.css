@@ -1,0 +1,108 @@
+input[type=text].jQKeyboard.focus,
+textarea.jQKeyboard.focus{
+    outline: 0;
+    border-color: #2a67b0;
+    box-shadow: 0 0 10px #2a67b0;
+    transition-property: border-color,box-shadow
+}
+
+div.jQKeyboardContainer{
+    display: table;
+    background: #464646;
+    -webkit-box-shadow: 3px 3px 6px #181818;
+    box-shadow: 3px 3px 6px #181818;
+    border: 1px solid #5D5D5D;
+    border-radius: 6px;
+    padding: 4px;
+    margin-top: 5px;
+}
+
+div.jQKeyboardRow{
+    display: table-row;
+    text-align: center;
+}
+
+button.jQKeyboardBtn{
+    color: #464646;
+    background: #d8dee9;
+    line-height: 2.25em;
+    min-width: 36px;
+    margin: 0;
+    padding: 1px 6px 1px 6px;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer; 
+}
+
+button.jQKeyboardBtn:hover{
+    background: #8ac0cf;
+}
+
+button.jQKeyboardBtn:active,
+button.jQKeyboardBtn.shift-active{
+    background: #e2909c;
+}
+
+button.jQKeyboardBtn.disabled{
+    color: #d9d9d9;
+    background: #5e626e;
+    background-image: -ms-linear-gradient(#939393, #939393);
+    background-image: -webkit-linear-gradient(#939393, #939393);
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}
+
+button.jQKeyboardBtn.ui-button-colspan-0{
+    width: 48px;
+}
+
+button.jQKeyboardBtn.ui-button-colspan-2{
+    width: 72px;
+}
+
+button.jQKeyboardBtn.ui-button-colspan-3{
+    width: 96px;
+}
+
+button.jQKeyboardBtn.ui-button-colspan-4{
+    width: 120px;
+}
+
+button.jQKeyboardBtn.ui-button-colspan-5{
+    width: 144px;
+}
+
+button.jQKeyboardBtn.ui-button-colspan-6{
+    width: 168px;
+}
+
+button.jQKeyboardBtn.ui-button-colspan-7{
+    width: 192px;
+}
+
+button.jQKeyboardBtn.ui-button-colspan-8{
+    width: 216px;
+}
+
+button.jQKeyboardBtn.ui-button-colspan-8{
+    width: 240px;
+}
+
+button.jQKeyboardBtn.ui-button-colspan-9{
+    width: 268px;
+}
+
+button.jQKeyboardBtn.ui-button-colspan-10{
+    width: 292px;
+}
+
+button.jQKeyboardBtn.ui-button-colspan-11{
+    width: 316px;
+}
+
+button.jQKeyboardBtn.ui-button-colspan-12{
+    width: 340px;
+}
