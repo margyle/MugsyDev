@@ -1,3 +1,4 @@
+<?php require 'inc/mugsy.inc.php';?>
 <!DOCTYPE html>
 <html lang="">
 	<head>
