@@ -50,7 +50,7 @@ html {
                    <!--this stays empty-->     
             	</div> <!--end col-->
                 	<div class="col-xs-4 col-sm-4-offset-2"> 
-                    	<a href="coffeeNowProcess/coffeeNow.php" target="_self"><img src="img/blocks/coffeeNowBlank.png" alt=""></a>
+                    	<a href="coffeeNowProcess/coffeeNowStart.php" target="_self"><img src="img/blocks/coffeeNowBlank.png" alt=""></a>
                     </div><!--end col-->
                     <div class="col-xs-4 col-sm-4-offset-2">
                         <a href="everythingElse.php" target="_self"><img src="img/blocks/everythingElse.png" alt=""></a>
