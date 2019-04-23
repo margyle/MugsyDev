@@ -45,24 +45,22 @@ html {
 	<br>
 		<div class="container-fluid"> <!-- If Needed Left and Right Padding in 'md' and 'lg' screen means use container class -->
             <div class="row">
-                <div class="col-xs-2 col-sm-2">
-                   <!--this stays empty-->     
-            	</div> <!--end col-->
-                	<div class="col-xs-4 col-sm-4-offset-2"> 
-                    	<a href="coffeeNowProcess/coffeeNow.php" target="_self"><img src="img/blocks/coffeeNowBlank.png" alt=""></a>
-                    </div><!--end col-->
-                    <div class="col-xs-4 col-sm-4-offset-2">
-                        <a href="everythingElse.php" target="_self"><img src="img/blocks/everythingElse.png" alt=""></a>
-                     </div><!--end col-->
-                <div class="col-xs-2 col-sm-2">
-                  <!--this stays empty-->     
-                </div>
-            </div><!--end row-->
-        </div><!--end container-->
+                        <div class="col-xs-4 col-sm-4">
+                            <a href="coffeeSettings.php"><img src="img/blocks/coffeeSettings.png" alt=""></a>
+                        </div>
+                        <div class="col-xs-4 col-sm-4">
+                           <a href="mugsySettings.php"><img src="img/blocks/mugsySettings.png" alt=""></a>
+                        </div>
+                        <div class="col-xs-4 col-sm-4">
+                           <a href="userSettings.php.php"><img src="img/blocks/userSettings.png" alt=""></a>
+                        </div>
+			</div>
+        </div>
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
 	</body>
 </html>
