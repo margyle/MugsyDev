@@ -1,6 +1,6 @@
 <?php require 'inc/mugsy.inc.php';?>
 <!-- This page is just a scratch pad for accessing some 
-links and demos, not meant for prodiction -->
+links and demos, not meant for production -->
 <!DOCTYPE html>
 <html lang="">
 <head>
