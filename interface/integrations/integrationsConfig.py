@@ -1,11 +1,11 @@
 {   "machineInfo" : {
-    "machineId":""
+    "machineId":"",
+    "integrationBrewUrl":""
     },
 
     "integrationStatus" : {
-    "statusEndpoint":"",
-    "authKey":"" ,
-    "machineId":""
+    "statusEndpoint":"1",
+    "authKey":""
     },
 
     "smsConfig" : {
