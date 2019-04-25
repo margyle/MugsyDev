@@ -22,6 +22,6 @@ slackConfig = {
 ifThisThanThatConfig = {
     'authKey': '',
     'machineId': '',
-    'endpointUrl': '',    
+    'endpointUrl': ''    
 }
 
