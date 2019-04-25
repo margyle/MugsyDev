@@ -1,5 +1,6 @@
 <?php
-include '../inc/inc/coffeeNow.inc.php';
+require 'inc/mugsy.inc.php';
+include '../include/inc/coffeeNow.inc.php';
 //next step in recipe is auto populated in JS with "php echo $nextStep">
 //next step url builder is in CoffeeNow.inc.php
 ?>
