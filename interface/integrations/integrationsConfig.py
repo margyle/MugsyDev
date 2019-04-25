@@ -1,33 +1,42 @@
-# integrationsConfig.py
-#authKeys grabbed from cloud control config
+{   "machineInfo" : {
+    "machineId":""
+    },
 
-# todo: multi phone numbers per machine
-smsConfig = {
-    'authKey': '',
-    'phoneNumber': ,
-    'machineId': ''
+    "integrationStatus" : {
+    "statusEndpoint":"",
+    "authKey":"" ,
+    "machineId":""
+    },
+
+    "smsConfig" : {
+    "authKey":"",
+    "phoneNumber":"" 
+    },
+
+    "alexaConfig" : {
+    "authKey":""
+    },
+
+    "slackConfig" : {
+    "authKey":"",
+    "slackDomain": ""
+    },
+
+    "ifThisThanThatConfig" : {
+    "authKey":"",
+    "endpointUrl": ""
+    },
+
+    "twitterConfig" : {
+    "authKey":"",
+    "twitterUsername": ""
+    }
 }
 
-alexaConfig = {
-    'authKey': '',
-    'machineId': ''
-}
 
-slackConfig = {
-    'authKey': '',
-    'machineId': '',
-    'slackDomain': ''
-}
 
-ifThisThanThatConfig = {
-    'authKey': '',
-    'machineId': '',
-    'endpointUrl': ''    
-}
-# todo: multi usernames per machine
-twitterConfig = {
-    'authKey': '',
-    'machineId': '',
-    'twitterUsername': ''    
-}
+
+
+
+
 
