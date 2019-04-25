@@ -16,7 +16,7 @@ alexaConfig = {
 slackConfig = {
     'authKey': '',
     'machineId': '',
-    'slackDomain': '',
+    'slackDomain': ''
 }
 
 ifThisThanThatConfig = {
