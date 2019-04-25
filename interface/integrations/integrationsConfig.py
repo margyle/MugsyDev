@@ -24,4 +24,10 @@ ifThisThanThatConfig = {
     'machineId': '',
     'endpointUrl': ''    
 }
+# todo: multi usernames per machine
+twitterConfig = {
+    'authKey': '',
+    'machineId': '',
+    'twitterUsername': ''    
+}
 
