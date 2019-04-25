@@ -1,5 +1,7 @@
 <?php
 //todo: convert php form handler to DECAF API endpoint
+//todo: add better cone direction controls
+//todo: add better step control
 require '../inc/mugsy.inc.php';
 ?>
 <!DOCTYPE html>
