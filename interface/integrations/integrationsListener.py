@@ -17,10 +17,10 @@ with urllib.request.urlopen(endpointUrl) as url:
 
 if (brewFlag == 1):
         with urllib.request.urlopen(integrationBrewUrl) as url2:
-            data2 = json.loads(url2.read().decode())
+            brewResponse = json.loads(url2.read().decode())
             #todo: change this to log instead of print
             #todo: decide where you want to reset the brew flag from
-            print(data2)        
+            print(brewResponse)        
 else:
         #todo: change this to log instead of print
         print("Brew flag has not changed")
