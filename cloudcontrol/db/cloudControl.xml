@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- Mugsy: Cloud Control
+- 
+- 
+-
+-->
+
+<pma_xml_export version="1.0">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="cloudControl" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="companies">
+                CREATE TABLE `companies` (
+                  `id` char(36) NOT NULL,
+                  `name` varchar(255) NOT NULL,
+                  `summary` varchar(255) NOT NULL,
+                  `logo` varchar(255) NOT NULL,
+                  UNIQUE KEY `unique_id` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="customIntegrations">
+                CREATE TABLE `customIntegrations` (
+                  `id` char(36) NOT NULL,
+                  `creatorId` char(36) NOT NULL,
+                  `apiKey` char(255) NOT NULL,
+                  `releaseStatus` varchar(255) NOT NULL,
+                  `summary` varchar(255) NOT NULL,
+                  `logo` varchar(255) NOT NULL,
+                  UNIQUE KEY `unique_id` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="keyDetective">
+                CREATE TABLE `keyDetective` (
+                  `id` char(36) NOT NULL,
+                  `apiKey` char(36) NOT NULL,
+                  `creatorId` char(36) NOT NULL,
+                  `integrationType` varchar(255) NOT NULL,
+                  `creationDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                  UNIQUE KEY `unique_id` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="machines">
+                CREATE TABLE `machines` (
+                  `id` char(36) NOT NULL,
+                  `userId` char(36) NOT NULL,
+                  `machineName` varchar(255) NOT NULL,
+                  UNIQUE KEY `unique_id` (`id`),
+                  UNIQUE KEY `unique_userId` (`userId`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:trigger name="uuid_for_machines">
+                CREATE TRIGGER `uuid_for_machines` BEFORE INSERT ON `machines`
+                 FOR EACH ROW SET NEW.id = UUID()
+            </pma:trigger>
+            <pma:table name="machineStatuses">
+                CREATE TABLE `machineStatuses` (
+                  `id` char(36) NOT NULL,
+                  `machineId` char(36) NOT NULL,
+                  `onlineStatus` varchar(255) NOT NULL,
+                  `brewStatus` varchar(255) NOT NULL,
+                  `waterLevel` int(100) NOT NULL,
+                  `beanLevel` int(100) NOT NULL,
+                  `brewCount` int(255) NOT NULL,
+                  `currentBeans` varchar(255) DEFAULT NULL,
+                  UNIQUE KEY `unique_id` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="officialIntegrations">
+                CREATE TABLE `officialIntegrations` (
+                  `id` char(36) NOT NULL,
+                  `integrationName` varchar(255) NOT NULL,
+                  `integrationType` varchar(255) NOT NULL,
+                  `integrationSummary` varchar(255) NOT NULL,
+                  `companyId` char(36) NOT NULL,
+                  `logo` varchar(255) NOT NULL,
+                  UNIQUE KEY `id` (`id`),
+                  KEY `Index_1` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="twilio">
+                CREATE TABLE `twilio` (
+                  `id` char(36) NOT NULL,
+                  `userId` char(36) NOT NULL,
+                  `phoneNumber` varchar(255) NOT NULL,
+                  `apiKey` char(36) NOT NULL,
+                  `codeword` varchar(255) NOT NULL,
+                  `machineId` char(255) NOT NULL,
+                  UNIQUE KEY `unique_id` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:trigger name="uuid_for_twilio_id_and_api_key">
+                CREATE TRIGGER `uuid_for_twilio_id` BEFORE INSERT ON `twilio`
+                 FOR EACH ROW SET NEW.id = UUID()
+            </pma:trigger>
+            <pma:table name="users">
+                CREATE TABLE `users` (
+                  `id` char(36) NOT NULL,
+                  `email` varchar(255) NOT NULL,
+                  `name` varchar(255) NOT NULL,
+                  `authSub` varchar(255) NOT NULL,
+                  `userName` varchar(50) NOT NULL,
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `email` (`email`),
+                  UNIQUE KEY `unique_userName` (`userName`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:trigger name="uuid_for_user_id">
+                CREATE TRIGGER `uuid_for_user_id` BEFORE INSERT ON `users`
+                 FOR EACH ROW SET NEW.id = UUID()
+            </pma:trigger>
+        </pma:database>
+    </pma:structure_schemas>
+</pma_xml_export>
