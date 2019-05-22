@@ -18,13 +18,13 @@ if (!isset($key)) {
     //add the fetch for associative array
     $machine = $query->fetch(PDO::FETCH_ASSOC);
 
-    foreach ($query as $row) {
-        $machineId = $row['id'];
-        $machineUserid = $row['userId'];
-        $machineName = $row['machineName'];
-        //echo json_encode(($query);
-        //echo json_encode($dataArray);
-    }
+
+    $machineId = $machine['id'];
+    $machineUserid = $machine['userId'];
+    $machineName = $machine['machineName'];
+    //echo json_encode(($query);
+    //echo json_encode($dataArray);
+
     echo json_encode($machine);
     //debug
     //echo "</br>" . $machineId . " " . $machineUserid . " " . $machineName;
