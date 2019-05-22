@@ -3,7 +3,7 @@
 
 Current Setup Info
 
-Example call: `https://cloud.heymugsy.com/v2/api/alexa/coffeeNowCloud.php?userID=xxxx&machineID=xxxx&authKey=xxxx`
+Example call: `https://cloud.heymugsy.com/v2/api/coffeeNowCloud.php?userID=xxxx&machineID=xxxx&authKey=xxxx`
 
 1. Cloud Control first checks to verify that your provided authKeymatches the apiKey created by your user for your Coffee Now integration.
     
