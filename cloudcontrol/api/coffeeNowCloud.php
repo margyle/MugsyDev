@@ -1,4 +1,5 @@
 <?php
+$integrationType = 'coffee_now';
 //todo get all includes into one call
 //todo move to oAuth for API auth
 //include 'vendor/autoload.php';
@@ -13,7 +14,7 @@ $userKey = $_GET['authKey'];
 $startBrewFlag = 1;
 
 //api listener
-if ($coffeeNowKey != $userKey) {
+if ($integrationKey != $userKey) {
     echo "No Permissions";
 } else {
     //get current brew ready status
