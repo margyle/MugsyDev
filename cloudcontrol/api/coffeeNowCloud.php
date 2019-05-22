@@ -3,16 +3,17 @@
 //todo move to oAuth for API auth
 //include 'vendor/autoload.php';
 include '../inc/inc.db.php';
+//get coffee now key from key detective 
+include '../inc/inc.keyDetective.php';
 
 $machineId = $_GET['machineID'];
 $requestingUser = $_GET['userID'];
-$key = $_GET['authKey'];
-//debug
-//echo $key;
+$userKey = $_GET['authKey'];
+
 $startBrewFlag = 1;
 
 //api listener
-if (!isset($key)) {
+if ($coffeeNowKey != $userKey) {
     echo "No Permissions";
 } else {
     //get current brew ready status
