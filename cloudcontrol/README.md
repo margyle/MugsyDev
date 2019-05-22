@@ -5,7 +5,7 @@ Current Setup Info
 
 Example call: `https://cloud.heymugsy.com/v2/api/coffeeNowCloud.php?userID=xxxx&machineID=xxxx&authKey=xxxx`
 
-1. Cloud Control first checks to verify that your provided authKeymatches the apiKey created by your user for your Coffee Now integration.
+1. Cloud Control first checks to verify that your provided authKey matches the apiKey created by your user for your Coffee Now integration.
     
 2. Next it will check to verify that your machine is online and currently ready to brew.
     
