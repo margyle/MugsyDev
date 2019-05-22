@@ -30,7 +30,8 @@ if (!isset($key)) {
 
     $machineId = $status['machineId'];
     $onlineStatus = $status['onlineStatus'];
-    $brewStatus = $status['brewStatus'];
+    $brewStatusMessage = $status['brewStatusMessage'];
+    $brewStatusCode = $status['brewStatusCode'];
     $waterLevel = $status['waterLevel'];
     $beanLevel = $status['beanLevel'];
     $brewCount = $status['brewCount'];
