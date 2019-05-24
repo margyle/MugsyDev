@@ -3,8 +3,7 @@ $DB_HOST = '****************';
 $DB_USER = '****************';
 $DB_PASS = '****************';
 $DB_NAME = '****************';
-//GRANT ALL PRIVILEGES ON cloudControl.* To '8DEEA34BF994B'@'localhost' IDENTIFIED BY '94D6F1EB62CCC';
-//CREATE USER '8DEEA34BF994B'@'localhost';
+
 
 //connect
 try {
