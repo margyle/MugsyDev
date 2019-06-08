@@ -6,7 +6,7 @@ It can also be used to build out new control systems for all types of hardware a
 
 ##### Mugsy OS has four main components:
 - **D.E.C.A.F**: A Python and Flask powered RESTful API to provide hardware control and data access.
-- **MugsyOS.py **: The main runtime and related utilities to keep everything running and healthy.
+- **MugsyOS.py**: The main runtime and related utilities to keep everything running and healthy.
 - **GUI**: JS and HTML interface files and framework.
 - **Commander**: A set of serial controlled Arduino scripts
 
