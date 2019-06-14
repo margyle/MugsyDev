@@ -54,11 +54,12 @@ void loop()
         moveCone();
         newData = false;
     }
+    //blink without delay debug for non block testing/confirmation
     if (currentMillis_1 - previousMillis_1 >= channel1_interval)
     {
-        // save the last time you blinked the LED
+
         previousMillis_1 = currentMillis_1;
-        //if the LED is off turn it on and vice-versa:
+
         if (channel1_state == LOW)
         {
             channel1_state = HIGH;
@@ -67,7 +68,7 @@ void loop()
         {
             channel1_state = LOW;
         }
-        // set the LED with the ledState of the variable:
+        // 
         digitalWrite(channel1, channel1_state);
     }
     stepper1.run();
