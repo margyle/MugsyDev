@@ -53,8 +53,8 @@ include  '../inc/inc.decaf.getAllRecipes.php';
   </div>
 </body>
 <!-- jQuery -->
-<script src="inc/js/jquery.js"></script>
+<script src="../inc/js/jquery.js"></script>
 <!-- Bootstrap JavaScript -->
-<script src="inc/js/bootstrap.min.js"></script>
+<script src="../inc/js/bootstrap.min.js"></script>
 
 </html>
