@@ -1,0 +1,1 @@
+# MugsyOS Manual Install Instructions
