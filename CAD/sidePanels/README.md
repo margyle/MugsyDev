@@ -1,1 +1,1 @@
-#Side Panels for Standard Size
+Side Panels for Standard Size
