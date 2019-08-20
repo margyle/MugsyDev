@@ -1,0 +1,184 @@
+/*! Mugsy V1 */
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+/* Mugsy kiosk mode reqs */
+::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */
+}
+
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+body {
+  background-image: url("../img/themes/purp/background.png");
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  color: #707070;
+  overflow-x: hidden;
+}
+/* primary colors */
+
+/* Fonts */
+@font-face {
+  font-family: bebas;
+
+  src: url("../fonts/Bebas/BEBAS.ttf");
+}
+
+@font-face {
+  font-family: avenir;
+
+  src: url("../fonts/avenir/AvenirLTStd-Roman.woff");
+}
+
+@font-face {
+  font-family: avenirOblique;
+
+  src: url("../fonts/avenir/AvenirLTStd-Oblique.woff");
+}
+
+/* argyle icons */
+@charset "UTF-8";
+
+@font-face {
+  font-family: "argyle-icon-font-2";
+  src:url("../fonts/argyle-icon-font-2.eot");
+  src:url("../fonts/argyle-icon-font-2.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/argyle-icon-font-2.woff") format("woff"),
+    url("../fonts/argyle-icon-font-2.ttf") format("truetype"),
+    url("../fonts/argyle-icon-font-2.svg#untitled-font-2") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "argyle-icon-font-2" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "argyle-icon-font-2" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-argyle-panda:before {
+  content: "\61";
+  font-size: 62pt;
+}
+.icon-argyle-beans:before {
+  content: "\61";
+  font-size: 62pt;
+}
+.icon-argyle-timer:before {
+  content: "\61";
+  font-size: 62pt;
+}
+.icon-argyle-waterTemp:before {
+  content: "\61";
+  font-size: 62pt;
+}
+
+
+
+/* Recipe List */
+#recipeListNumberHeading {
+  font-family: bebas;
+  font-size: 37pt;
+  color: #707070;
+}
+#recipeListName {
+  font-family: avenir;
+  font-size: 20pt;
+  color: #707070;
+}
+#recipeListSource {
+  font-family: avenirOblique;
+  font-size: 10pt;
+  color: #707070;
+}
+
+#recipeblock {
+  width:10.5rem;
+   height:12rem;
+}
+#recipeblockStripe {
+  background-color: #8781bd;
+   border: #fafafa; 
+}
+#recipeblockText {
+  font-family: avenir;
+  font-size: 17pt;
+  color: #707070;
+   padding-top:10px
+}
+
+/* Buttons:Recipe */
+#buttonsContainer {
+  padding-left:40px;
+}
+#recipeListStartButton {
+  width:10rem;
+  height:50px;
+}
+#recipeListEditButton {
+  width:10rem;
+  height:50px;
+}
+#recipeListLookyButton {
+  width:10rem;
+  height:50px;
+}
+#recipeListFirstButtonRow{
+  padding-top:5px;
+}
+#recipeListRemainingButtonRows{
+  padding-top:15px;
+}
+
+/* mainScreen.html */
+#header {
+   padding-top:10px
+}
+#headerText {
+  font-family: bebas;
+  font-size: 17pt;
+  color: #707070;
+ 
+}
+#headerStatusBadge{
+padding-top: 15px;
+
+ 
+}
+
+#canvas {
+  margin-top: 1vw;
+  background-color: rgb(87, 94, 94);
+  border: solid 1px #555;
+}
