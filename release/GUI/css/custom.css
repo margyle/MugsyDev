@@ -47,63 +47,129 @@ body {
 }
 
 /* argyle icons */
-@charset "UTF-8";
-
+/* argyle icons */
 @font-face {
-  font-family: "argyle-icon-font-2";
-  src:url("../fonts/argyle-icon-font-2.eot");
-  src:url("../fonts/argyle-icon-font-2.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/argyle-icon-font-2.woff") format("woff"),
-    url("../fonts/argyle-icon-font-2.ttf") format("truetype"),
-    url("../fonts/argyle-icon-font-2.svg#untitled-font-2") format("svg");
+  font-family: 'mugsyIcons';
+  src:  url('../fonts/mugsyIcons.eot?ys0pmx');
+  src:  url('../fonts/mugsyIcons.eot?ys0pmx#iefix') format('embedded-opentype'),
+    url('../fonts/mugsyIcons.ttf?ys0pmx') format('truetype'),
+    url('../fonts/mugsyIcons.woff?ys0pmx') format('woff'),
+    url('../fonts/mugsyIcons.svg?ys0pmx#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
-
 }
 
-[data-icon]:before {
-  font-family: "argyle-icon-font-2" !important;
-  content: attr(data-icon);
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
+[class^="icon_"], [class*=" icon_"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'mugsyIcons' !important;
   speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   line-height: 1;
+
+  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-  font-family: "argyle-icon-font-2" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-argyle-panda:before {
-  content: "\61";
+.icon_mugsy_Panda:before {
+  content: "\e900";
   font-size: 62pt;
 }
-.icon-argyle-beans:before {
-  content: "\61";
+.icon_mugsy_Outlet:before {
+  content: "\e901";
   font-size: 62pt;
 }
-.icon-argyle-timer:before {
-  content: "\61";
+.icon_mugsy_Heart_1:before {
+  content: "\e902";
   font-size: 62pt;
 }
-.icon-argyle-waterTemp:before {
-  content: "\61";
+.icon_mugsy_dashboard:before {
+  content: "\e903";
   font-size: 62pt;
 }
-
+.icon_mugsy_Music:before {
+  content: "\e904";
+  font-size: 62pt;
+}
+.icon_mugsy_coffeebeans:before {
+  content: "\e905";
+  font-size: 62pt;
+}
+.icon_mugsy_Barcode:before {
+  content: "\e906";
+  font-size: 62pt;
+}
+.icon_mugsy_pourover:before {
+  content: "\e907";
+  font-size: 62pt;
+}
+.icon_mugsy_daffodil:before {
+  content: "\e908";
+  font-size: 62pt;
+}
+.icon_mugsy_Heart_2:before {
+  content: "\e909";
+  font-size: 62pt;
+}
+.icon_mugsy_AstronautHelmet:before {
+  content: "\e90a";
+  font-size: 62pt;
+}
+.icon_mugsy_wrong:before {
+  content: "\e90b";
+  font-size: 62pt;
+}
+.icon_mugsy_Checklist:before {
+  content: "\e90c";
+  font-size: 62pt;
+}
+.icon_mugsy_stopsign:before {
+  content: "\e90d";
+  font-size: 62pt;
+}
+.icon_mugsy_Kettle:before {
+  content: "\e90e";
+  font-size: 62pt;
+}
+.icon_mugsy_Grinder_Coffee:before {
+  content: "\e90f";
+  font-size: 62pt;
+}
+.icon_mugsy_timer:before {
+  content: "\e910";
+  font-size: 62pt;
+}
+.icon_mugsy_Rain:before {
+  content: "\e911";
+  font-size: 62pt;
+}
+.icon_mugsy_MachineLearning:before {
+  content: "\e912";
+  font-size: 62pt;
+}
+.icon_mugsy_Cat:before {
+  content: "\e913";
+  font-size: 62pt;
+}
+.icon_mugsy_world:before {
+  content: "\e914";
+  font-size: 62pt;
+}
+.icon_mugsy_broken:before {
+  content: "\e915";
+  font-size: 62pt;
+}
+.icon_mugsy_Sad:before {
+  content: "\e916";
+  font-size: 62pt;
+}
+.icon_mugsy_WaterTemperature:before {
+  content: "\e917";
+  font-size: 62pt;
+}
 
 
 /* Recipe List */
