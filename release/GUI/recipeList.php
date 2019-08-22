@@ -104,7 +104,7 @@ $recipes =  json_decode($response, true);
                     echo '</div>';
                         echo '<div class="row" id="recipeListRemainingButtonRows">';
                             echo ' <button class="btn btn-primary btn-block shadow" data-toggle="modal"
-                            data-target="#exampleModalCenter" id="recipeListLookyButton">Looksy</button>';
+                            data-target="#looksyModal" id="recipeListLookyButton">Looksy</button>';
                         echo '</div>';
                     echo '</div>';
             //end button block
