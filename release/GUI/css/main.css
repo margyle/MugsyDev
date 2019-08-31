@@ -1,0 +1,284 @@
+/*! Mugsy V1 */
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+/* Mugsy kiosk mode reqs */
+::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */
+}
+
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+body {
+  background-image: url("../img/themes/purp/background.png");
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  color: #707070;
+  overflow-x: hidden;
+}
+/* primary colors */
+
+/* Fonts */
+@font-face {
+  font-family: bebas;
+
+  src: url("../fonts/Bebas/BEBAS.ttf");
+}
+
+@font-face {
+  font-family: avenir;
+
+  src: url("../fonts/avenir/AvenirLTStd-Roman.woff");
+}
+
+@font-face {
+  font-family: avenirOblique;
+
+  src: url("../fonts/avenir/AvenirLTStd-Oblique.woff");
+}
+
+/* argyle icons */
+/* argyle icons */
+@font-face {
+  font-family: 'mugsyIcons';
+  src:  url('../fonts/mugsyIcons.eot?ys0pmx');
+  src:  url('../fonts/mugsyIcons.eot?ys0pmx#iefix') format('embedded-opentype'),
+    url('../fonts/mugsyIcons.ttf?ys0pmx') format('truetype'),
+    url('../fonts/mugsyIcons.woff?ys0pmx') format('woff'),
+    url('../fonts/mugsyIcons.svg?ys0pmx#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon_"], [class*=" icon_"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'mugsyIcons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon_mugsy_Panda:before {
+  content: "\e900";
+  font-size: 62pt;
+}
+.icon_mugsy_Outlet:before {
+  content: "\e901";
+  font-size: 62pt;
+}
+.icon_mugsy_Heart_1:before {
+  content: "\e902";
+  font-size: 62pt;
+}
+.icon_mugsy_dashboard:before {
+  content: "\e903";
+  font-size: 62pt;
+}
+.icon_mugsy_Music:before {
+  content: "\e904";
+  font-size: 62pt;
+}
+.icon_mugsy_coffeebeans:before {
+  content: "\e905";
+  font-size: 62pt;
+}
+.icon_mugsy_Barcode:before {
+  content: "\e906";
+  font-size: 62pt;
+}
+.icon_mugsy_pourover:before {
+  content: "\e907";
+  font-size: 62pt;
+}
+.icon_mugsy_daffodil:before {
+  content: "\e908";
+  font-size: 62pt;
+}
+.icon_mugsy_Heart_2:before {
+  content: "\e909";
+  font-size: 62pt;
+}
+.icon_mugsy_AstronautHelmet:before {
+  content: "\e90a";
+  font-size: 62pt;
+}
+.icon_mugsy_wrong:before {
+  content: "\e90b";
+  font-size: 62pt;
+}
+.icon_mugsy_Checklist:before {
+  content: "\e90c";
+  font-size: 62pt;
+}
+.icon_mugsy_stopsign:before {
+  content: "\e90d";
+  font-size: 62pt;
+}
+.icon_mugsy_Kettle:before {
+  content: "\e90e";
+  font-size: 62pt;
+}
+.icon_mugsy_Grinder_Coffee:before {
+  content: "\e90f";
+  font-size: 62pt;
+}
+.icon_mugsy_timer:before {
+  content: "\e910";
+  font-size: 62pt;
+}
+.icon_mugsy_Rain:before {
+  content: "\e911";
+  font-size: 62pt;
+}
+.icon_mugsy_MachineLearning:before {
+  content: "\e912";
+  font-size: 62pt;
+}
+.icon_mugsy_Cat:before {
+  content: "\e913";
+  font-size: 62pt;
+}
+.icon_mugsy_world:before {
+  content: "\e914";
+  /* font-size: 62pt; */
+}
+.icon_mugsy_broken:before {
+  content: "\e915";
+  font-size: 62pt;
+}
+.icon_mugsy_Sad:before {
+  content: "\e916";
+  font-size: 62pt;
+}
+.icon_mugsy_WaterTemperature:before {
+  content: "\e917";
+  font-size: 62pt;
+}
+
+/* Home Screen */
+#coffeeNowCard {
+  width:13.5rem;
+}
+#coffeeNowTextImg {
+  padding-top: 60px;
+}
+#cardBar {
+  background-color: #8781bd;
+  border: #fafafa; 
+}
+#usualText {
+  font-family: avenir;
+  font-size: 17pt;color: #707070;
+  padding-top:10px
+}
+#coffeeNowCardSettings {
+  font-family: avenir;
+  font-size: 12pt;
+  color: #707070;
+}
+#everythingElseCard{
+  width:13.5rem;  
+}
+#everythingElseTextIMg {
+  padding-top: 60px;
+}
+#homeCardMugsyLogo {
+  padding-bottom: 28px;
+}
+
+/* Recipe List */
+#recipeListNumberHeading {
+  font-family: bebas;
+  font-size: 49.3px;
+  color: #707070;
+}
+#recipeListName {
+  font-family: avenir;
+  font-size: 30pt;
+  color: #707070;
+}
+#recipeListSource {
+  font-family: avenirOblique;
+  font-size: 10pt;
+  color: #707070;
+}
+
+#recipeblock {
+  width:10.5rem;
+   height:12rem;
+}
+#recipeblockStripe {
+  background-color: #8781bd;
+   border: #fafafa; 
+}
+#recipeblockText {
+  font-family: avenir;
+  font-size: 17pt;
+  color: #707070;
+   padding-top:10px
+}
+
+/* Buttons:Recipe */
+#buttonsContainer {
+  padding-left:40px;
+}
+#recipeListStartButton {
+  width:10rem;
+  height:50px;
+}
+#recipeListEditButton {
+  width:10rem;
+  height:50px;
+}
+#recipeListLookyButton {
+  width:10rem;
+  height:50px;
+}
+#recipeListFirstButtonRow{
+  padding-top:5px;
+}
+#recipeListRemainingButtonRows{
+  padding-top:15px;
+}
+
+/* mainScreen.html */
+#header {
+   padding-top:10px
+}
+#headerText {
+  font-family: bebas;
+  font-size: 17pt;
+  color: #707070;
+}
+#headerStatusBadge {
+padding-top: 15px;
+}
+
+/* loadMugsy.php */
+#currentLoad {
+  /* font-family: bebas;
+  font-size: 49.3px;
+  color: #707070; */
+}
+
+#canvas {
+  margin-top: 1vw;
+  background-color: rgb(87, 94, 94);
+  border: solid 1px #555;
+}
