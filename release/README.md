@@ -15,9 +15,9 @@ It can also be used to build out new control systems for all types of hardware a
 - A docker container.
 - Repo/Files for manual install.
 
-##### Screeshots:
-![home screen](https://github.com/margyle/MugsyDev/blob/master/readMeAssets/home.png)
+##### Screenshots:
+![Home screen](https://github.com/margyle/MugsyDev/blob/master/readMeAssets/home.png)
 
-![home screen](https://github.com/margyle/MugsyDev/blob/master/readMeAssets/recipeList.png)
+![Recipe List](https://github.com/margyle/MugsyDev/blob/master/readMeAssets/recipeList.png)
 
 
