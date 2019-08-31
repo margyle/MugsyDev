@@ -16,8 +16,10 @@ It can also be used to build out new control systems for all types of hardware a
 - Repo/Files for manual install.
 
 ##### Screenshots:
-![Home screen](https://github.com/margyle/MugsyDev/blob/master/readMeAssets/home1.png)
+![Home Screen](https://github.com/margyle/MugsyDev/blob/master/readMeAssets/home1.png)
 
 ![Recipe List](https://github.com/margyle/MugsyDev/blob/master/readMeAssets/recipeList1.png)
+
+![Brew Screen](https://github.com/margyle/MugsyDev/blob/master/readMeAssets/brewScreen.png)
 
 
