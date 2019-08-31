@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+include 'inc/inc.db.php';
+include 'inc/inc.getMachineStatus.php';
+include 'inc/inc.getCoffeeNowSettings.php';
+
+//debug
+//$_SESSION['machineId'] = "";
+
+
+?>
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -18,29 +30,29 @@
 
 <body>
 
-<div class="container-fluid">
-    <div class="row" id="statusHeader">
+    <div class="container-fluid">
+        <div class="row" id="statusHeader" style="padding-top:5px">
             <div class="col-md-8">
                 <!--keep empty for header-->
             </div>
             <div class="col-md-2">
 
             </div>
-            <div class="col-md-2 text-right" id="homeStatus">
+            <div class="col-md-2 text-right">
                 <!--TODO: link to system status-->
-                <?= $status ?>
+                <?= $statusDisplay ?>
             </div>
-    </div>
+        </div>
         <!--start interface cards-->
-    <div class="row">
+        <div class="row" id="cardsRow">
             <div class="col-xs-2 col-sm-2">
                 <!--this stays empty-->
             </div>
             <!-- coffeenow card -->
             <div class="col-sm-4">
-                <div class="card h-100 shadow border-muted" id="coffeeNowCard">
+                <div class="card h-100 shadow border-muted" id="coffeeNowCard" onclick="location.href='coffeeNow.php';">
                     <div class="card-body shadow">
-                        <img id=coffeeNowTextImg" src="img/blocks/main/mainCoffeeNow.png" />
+                        <img id=coffeeNowTextImg" src="img/blocks/main/mainCoffeeNow.png" style="padding-top: 60px;" />
                     </div>
                     <ul class="list-group list-group-flush ">
                         <li class="list-group-item shadow" id="cardBar">
@@ -48,7 +60,7 @@
                     </ul>
                     <div class="card-footer">
                         <span id="usualText">The Usual</span>
-                        <p class="text-left" id="coffeeNowCardSettings"><?= $recipeName ?><br><?= $settingsType ?></p>
+                        <p class="text-left" id="coffeeNowCardSettings"><?= $coffeeNowRecipeName ?><br><?= $coffeeNowSettingsType ?></p>
 
                     </div>
                 </div>
@@ -56,9 +68,9 @@
             </div>
             <!-- everything else card -->
             <div class="col-sm-4">
-                <div class="card  h-100 shadow border-muted" id="everythingElseCard">
+                <div class="card  h-100 shadow border-muted" id="everythingElseCard" onclick="location.href='everyThingElse.php';">
                     <div class="card-body shadow">
-                        <img id="everythingElseTextImg" src="img/blocks/main/mainEverythingElse.png" />
+                        <img id="everythingElseTextImg" src="img/blocks/main/mainEverythingElse.png" style="padding-top: 60px;" />
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item shadow" id="cardBar"">
@@ -71,12 +83,15 @@
             </div>
 
         </div>
-            <div class="col-xs-2 col-sm-2">
-                <!--this stays empty-->
-            </div>
+        <div class="col-xs-2 col-sm-2">
+            <!--this stays empty-->
+        </div>
 
     </div>
-</div>
+    <div class="row">
+        <hr>
+    </div>
+    </div>
 
 
 
