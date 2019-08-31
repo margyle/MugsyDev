@@ -94,13 +94,6 @@ include 'inc/inc.getCoffeeNowSettings.php';
     </div>
 
 
-
-
-
-
-
-
-
     <script src="js/vendor/modernizr-3.7.1.min.js"></script>
 
     <script src="js/vendor/jquery-3.4.1.min.js"></script>
