@@ -4,9 +4,10 @@ session_start();
 //include 'vendor/autoload.php'; #TODO prep local oAuth 
 include 'inc/inc.db.php';
 include 'inc/inc.getRecipes.php';
-
+include 'inc/inc.getMachineStatus.php';
 //debug
-//echo $_SESSION["subID"];
+// $_SESSION["subID"] = ""; 
+// $_SESSION['machineId'] = "";
 
 //convert json response from inc.getRecipes.php to array
 $recipes =  json_decode($response, true);
@@ -30,8 +31,18 @@ $recipes =  json_decode($response, true);
     <!-- start container -->
     <div class="container-fluid">
         <!-- start header -->
-        <div class="row" id="header">
-             </div><!-- end header -->
+        <div class="row" id="statusHeader" style="padding-top:5px">
+            <div class="col-md-8">
+                <!--keep empty for header-->
+            </div>
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-2 text-right">
+                <!--TODO: link to system status-->
+                <?= $statusDisplay ?>
+            </div>
+        </div><!-- end header -->
         <!--start recipe-listing-->
         <?php
         // Loop through recipes array and spit out the list item html
@@ -56,7 +67,7 @@ $recipes =  json_decode($response, true);
                 //start grind weight block
                 echo '<div class="row" style="padding-bottom: 30px;">';
                     echo '<div class="col-sm-3" id=recipeBlockContainer">';
-                        echo '<div class="card shadow border-muted" id="recipeBlock">';
+                        echo '<div class="card shadow border-muted" id="recipeBlock" style="border-radius: 50;">';
                             echo '<div class="card-body shadow text-center">';
                                 echo '<i class="icon_mugsy_coffeebeans"></i>';
                             echo '</div>';
