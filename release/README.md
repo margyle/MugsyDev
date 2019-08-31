@@ -18,6 +18,6 @@ It can also be used to build out new control systems for all types of hardware a
 ##### Screenshots:
 ![Home screen](https://github.com/margyle/MugsyDev/blob/master/readMeAssets/home1.png)
 
-![Recipe List](https://github.com/margyle/MugsyDev/blob/master/readMeAssets/recipeList.png)
+![Recipe List](https://github.com/margyle/MugsyDev/blob/master/readMeAssets/recipeList1.png)
 
 
