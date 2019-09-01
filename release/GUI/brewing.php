@@ -1,5 +1,8 @@
 <?php
-include 'inc/inc.getRecipeSteps.php';
+include 'inc/inc.db.php';	
+include 'inc/inc.getRecipeSteps.php';	
+include 'inc/inc.getMachineStatus.php';
+
 ?>
 
 <!doctype html>
