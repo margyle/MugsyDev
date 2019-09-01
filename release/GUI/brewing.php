@@ -1,5 +1,5 @@
 <?php
-include 'brewTest.php';
+include 'inc/inc.getRecipeSteps.php';
 ?>
 
 <!doctype html>
