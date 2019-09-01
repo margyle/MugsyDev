@@ -5,7 +5,6 @@ include 'inc/inc.getRecipeSteps.php';
 include 'inc/inc.getMachineStatus.php';
 
 ?>
-
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -48,7 +47,7 @@ include 'inc/inc.getMachineStatus.php';
 
                 <span style="font-family: bebas;font-size: 30pt;color: #707070">Brew Progress:</span><span style="font-family: Avenir;font-size: 25pt;color: #707070">Argyle Brew</span>
                 <div class="progress shadow">
-                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" style="width: 40%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> 40% Complete</div>
+                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" id="brewProgressBar" role="progressbar" style="width: 0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> </div>
                 </div>
                 <br>
                 <!--end col-->
@@ -113,6 +112,7 @@ include 'inc/inc.getMachineStatus.php';
     //steps -1 = allsteps
     var allSteps = <?=$totalSteps?>;
     var currentStep = 0;
+    var percentComplete = 5
     //populate times array with step times
     <?php echo "var times = " . $js_array . ";\n"; ?>
 
@@ -127,6 +127,10 @@ include 'inc/inc.getMachineStatus.php';
             step2 = currentStep - 1;
             document.getElementById(currentStep).style.backgroundColor = "#f26d7d";
             document.getElementById(currentStep).style.color = "white";
+            //update progress bar
+            percentComplete = 100/(allSteps - currentStep);
+            document.getElementById("brewProgressBar").style.width = percentComplete + "%";
+            //reverse
             if (step2 >= 0) {
                     document.getElementById(step2).style.backgroundColor = "";
                     document.getElementById(step2).style.color = "";
