@@ -45,7 +45,7 @@ include 'inc/inc.getMachineStatus.php';
         <div class="row" id="progressContainer">
             <div class="col-xs-12 col-sm-12">
 
-                <span style="font-family: bebas;font-size: 30pt;color: #707070">Brew Progress:</span><span style="font-family: Avenir;font-size: 25pt;color: #707070">Argyle Brew</span>
+                <span style="font-family: bebas;font-size: 30pt;color: #707070">Brew Progress:</span><span style="font-family: Avenir;font-size: 25pt;color: #707070"><?=$recipeName;?></span>
                 <div class="progress shadow">
                     <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" id="brewProgressBar" role="progressbar" style="width: 0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"> </div>
                 </div>
