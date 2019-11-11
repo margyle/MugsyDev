@@ -1,4 +1,12 @@
 #include <AccelStepper.h>
+#include <OneWire.h>
+#include <DallasTemperature.h>
+
+
+//Temp sensor
+#define ONE_WIRE_BUS 3
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature sensors(&oneWire);
 
 //weight sensor
 #include "HX711.h"
@@ -48,11 +56,14 @@ char weightQuery[] ="W";
 //============
 
 void setup() {
-    pinMode(channel1, OUTPUT);   
+    pinMode(channel1, OUTPUT);
+    //set up temp sensors
+    sensors.begin();   
     scale.begin(DOUT, CLK);
     //set up scale
     scale.set_scale(calibration_factor); 
-    scale.tare(); //Assuming there is no weight on the scale at start up, reset the scale to 0 
+    //Assuming there is no weight on the scale at start up, reset the scale to 0 
+    scale.tare();
     //set up stepper
     stepper1.setMaxSpeed(200.0);
     stepper1.setAcceleration(300.0);
@@ -174,6 +185,9 @@ void parseData() {      // split the data into its parts
 
 //============
 void getTemp(){
+   sensors.requestTemperatures();
+   Serial.println(sensors.getTempCByIndex(0));
+  
     //todo need to put sensor pulls back in
     // combinedTemp = temp1 + temp2;
     // currentTemp = combinedTemp/2;
@@ -185,7 +199,9 @@ void getTemp(){
 //============
 
 //============
-
+//move cone command structure
+//<M,0,800,60.00>
+//<M,Direction, Steps, Speed
 void moveCone() {
     if (stepperDirection == 0){
     stepper1.move(totalSteps);}
