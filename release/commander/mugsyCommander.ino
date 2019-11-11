@@ -7,6 +7,10 @@
 #define ONE_WIRE_BUS 3
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
+int deviceCount = 0;
+float temp1;
+float temp2;
+float averageTemp;
 
 //weight sensor
 #include "HX711.h"
@@ -37,12 +41,6 @@ int totalSteps = 0;
 float stepperSpeed = 0.0;
 boolean newData = false;
 
-//temperature variables
-float temp1 = 0.00;
-float temp2 = 0.00;
-float combinedTemp = 0.00;
-float currentTemp = 0.00;
-
 //weight
 float weight = 0.00;
 
@@ -59,8 +57,10 @@ void setup() {
     pinMode(channel1, OUTPUT);
     //set up temp sensors
     sensors.begin();   
-    scale.begin(DOUT, CLK);
+    deviceCount = sensors.getDeviceCount();
+
     //set up scale
+    scale.begin(DOUT, CLK);
     scale.set_scale(calibration_factor); 
     //Assuming there is no weight on the scale at start up, reset the scale to 0 
     scale.tare();
@@ -185,15 +185,18 @@ void parseData() {      // split the data into its parts
 
 //============
 void getTemp(){
-   sensors.requestTemperatures();
-   Serial.println(sensors.getTempCByIndex(0));
-  
-    //todo need to put sensor pulls back in
-    // combinedTemp = temp1 + temp2;
-    // currentTemp = combinedTemp/2;
-    // Serial.println("Command Recieved: ");
-    // Serial.print("Current Temp: ");
-    // Serial.println(currentTemp);
+   sensors.requestTemperatures(); 
+   temp1 = sensors.getTempCByIndex(0);
+   temp2 = sensors.getTempCByIndex(1);
+   averageTemp = ((temp1 + temp2)/2); 
+   Serial.println(averageTemp);
+   //debug
+//   Serial.print("Sensor1: ");
+//   Serial.println(temp1);
+//   Serial.print("Sensor2: ");
+//   Serial.println(temp2);
+
+   
      
 }
 //============
