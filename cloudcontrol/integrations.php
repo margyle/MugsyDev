@@ -116,7 +116,6 @@ $keyResult = $_GET['created'];
                                                         <option value="Coffee Now">Coffee Now</option>
                                                         <option value="D.E.C.A.F API">D.E.C.A.F API</option>
                                                         <option value="Developer">Developer</option>
-                                                        <option value="test">test</option>
                                                     </select>
                                             </div>
                                                 <hr>
