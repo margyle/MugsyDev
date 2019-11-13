@@ -1,5 +1,4 @@
 
-**Cloud Control API code base. Currently converting to a RESTful set up. ETA 72 hours.**
 
 Current Setup Info
 
