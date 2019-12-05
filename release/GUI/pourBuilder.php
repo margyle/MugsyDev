@@ -22,9 +22,10 @@ include 'inc/inc.getMachineStatus.php';
     <!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
+        <![endif]-->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+
 </head>
 
 <body>
@@ -122,13 +123,14 @@ include 'inc/inc.getMachineStatus.php';
                                 Step Editor:
                             </div>
                             <div class="card-body">
-                                <p class="card-text"><span id="editorActionable">
-                                    </span></p>
-                                </span></p>
-                                <button type="button" class="btn list-group-item-success " onClick="addStep()" style="background-color: #2ab071;color: white;">Next
-                                    Step</button>
-                                <button type="button" class="btn list-group-item-danger " onClick="deleteItem();" style="background-color:#f28c8f;color:white;">Delete
-                                    Step</button>
+                                <form>
+                                    <p class="card-text"><div id="editorActionable">
+                                    </div>
+                                    <button type="button" class="btn list-group-item-success " onClick="addStep()" style="background-color: #2ab071;color: white;">Next
+                                        Step</button>
+                                    <button type="button" class="btn list-group-item-danger " onClick="deleteItem();" style="background-color:#f28c8f;color:white;">Delete
+                                        Step</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -183,6 +185,11 @@ include 'inc/inc.getMachineStatus.php';
             handle: '.list-group-item',
             sort: false,
             filter: '.sortable-disabled',
+            onMove: function (evt) {
+            // if (evt.item > 0) {
+            //     return false;
+            // }
+        }
             //chosenClass: 'active',
         });
 
@@ -217,16 +224,42 @@ include 'inc/inc.getMachineStatus.php';
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
             var water = document.createElement('span');
-            water.innerHTML = '<div id=editorActionable">Updated form for water settings</div>';
+            water.innerHTML = '<div id=editorActionable">'+
+            '<div class="form-group row" style="padding-left:0px; padding-top: 0px">'+
+            '<label class="col-sm-4 col-form-label">Total Milliliters:</label>'+
+            '<select class="form-control col-sm-4" id="waterWeightMl">'+
+            '<option>50</option>'+
+            '<option>10</option>'+
+            '</select>'+
+            '</div>'+
+            '<div class="form-group row" style="padding-left:0px; padding-top: 0px">'+
+            '<label class="col-sm-4 col-form-label">Flow Rate:</label>'+
+            '<select class="form-control col-sm-4" id="flowRateMl">'+
+            '<option>5</option>'+
+            '<option>10</option>'+
+            '</select>'+
+            '</div>'+
+            '<hr>'+
+            '</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(water, el1);
-
+        
         }
         if (draggedItem.id == "cone") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
             var cone = document.createElement('span');
-            cone.innerHTML = '<div id="editorActionable">Updated form for cone settings</div>';
+            cone.innerHTML = '<div id="editorActionable">'+
+            '<div class="form-check">'+
+            '<input class="form-check-input" type="checkbox" value="" id="coneClockwise">'+
+            '<label class="form-check-label" for="defaultCheck1">Clockwise</label>'+
+            '</div>'+
+            '<div class="form-check" style="padding-bottom:10px;">'+
+            '<input class="form-check-input" type="checkbox" value="" id="coneCounterClockwise">'+
+            '<label class="form-check-label" for="defaultCheck1">Counter Clockwise</label>'+
+            '</div>'+
+            '<hr>'+
+            '</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(cone, el1);
 
