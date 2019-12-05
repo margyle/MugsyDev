@@ -77,8 +77,8 @@ include 'inc/inc.getMachineStatus.php';
                         </span>
                     </li>
 
-                    <li class="list-group-item list-group-item-dark text-center" id="stop">
-                        <span style="font-size: 1em; ">stop
+                    <li class="list-group-item list-group-item-dark text-center" id="pause">
+                        <span style="font-size: 1em; ">pause
                             <i class="fas fa-stop-circle" style="size: 4em"></i>
                         </span>
                     </li>
@@ -161,6 +161,7 @@ include 'inc/inc.getMachineStatus.php';
    
     //make available step options draggable
     var setting = 1;
+    var draggedItem; 
     var currentOption = "waiting";
     $(document).ready(function() {
         
@@ -184,10 +185,9 @@ include 'inc/inc.getMachineStatus.php';
             group: 'list-1',
             handle: '.list-group-item',
             onAdd(evt) {
-                var itemEl = evt.item; 
-                console.log(itemEl.id);
-                //console.log(id);
-                //updateEditor();
+                draggedItem = evt.item; 
+                //console.log(draggedItem.id);
+                updateEditor();
                 setting++
 
             }
@@ -201,6 +201,75 @@ include 'inc/inc.getMachineStatus.php';
         ulElem.removeChild(ulElem.childNodes[i])
         setting--;
         //mainDrag();
+    }
+
+    //update editor for dragged option type
+    function updateEditor() {
+        console.log("Editor Type: " + draggedItem.id);
+
+        if (draggedItem.id == "water") {
+            //console.log(setting == 1);
+            var el1 = document.querySelector('#editorActionable');
+            var water = document.createElement('span');
+            water.innerHTML = '<div id="editorActionable">Updated form for water settings</div>';
+            // replace el with newEL
+            el1.parentNode.replaceChild(water, el1);
+
+        }
+        if (draggedItem.id == "cone") {
+            //console.log(setting == 1);
+            var el1 = document.querySelector('#editorActionable');
+            var cone = document.createElement('span');
+            cone.innerHTML = '<div id="editorActionable">Updated form for cone settings</div>';
+            // replace el with newEL
+            el1.parentNode.replaceChild(cone, el1);
+
+        }
+        if (draggedItem.id == "spout") {
+            //console.log(setting == 1);
+            var el1 = document.querySelector('#editorActionable');
+            var spout = document.createElement('span');
+            spout.innerHTML = '<div id="editorActionable">Updated form for spout settings</div>';
+            // replace el with newEL
+            el1.parentNode.replaceChild(spout, el1);
+
+        }
+        if (draggedItem.id == "time") {
+            //console.log(setting == 1);
+            var el1 = document.querySelector('#editorActionable');
+            var time = document.createElement('span');
+            time.innerHTML = '<div id="editorActionable">Updated form for time settings</div>';
+            // replace el with newEL
+            el1.parentNode.replaceChild(time, el1);
+
+        }
+        if (draggedItem.id == "repeat") {
+            //console.log(setting == 1);
+            var el1 = document.querySelector('#editorActionable');
+            var repeat = document.createElement('span');
+            repeat.innerHTML = '<div id="editorActionable">Updated form for repeat settings</div>';
+            // replace el with newEL
+            el1.parentNode.replaceChild(repeat, el1);
+
+        }
+        if (draggedItem.id == "pause") {
+            //console.log(setting == 1);
+            var el1 = document.querySelector('#editorActionable');
+            var pause = document.createElement('span');
+            pause.innerHTML = '<div id="editorActionable">Updated form for pause settings</div>';
+            // replace el with newEL
+            el1.parentNode.replaceChild(pause, el1);
+
+        }
+        if (draggedItem.id == "grind") {
+            //console.log(setting == 1);
+            var el1 = document.querySelector('#editorActionable');
+            var grind = document.createElement('span');
+            grind.innerHTML = '<div id="editorActionable">Updated form for grind settings</div>';
+            // replace el with newEL
+            el1.parentNode.replaceChild(grind, el1);
+
+        }
     }
 </script>
 
