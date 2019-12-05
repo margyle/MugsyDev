@@ -154,13 +154,16 @@ include 'inc/inc.getMachineStatus.php';
 
 <link href="css/fa/css/all.css" rel="stylesheet">
 
-<script src="js/pourBuilder.js"></script>
+<!-- <script type="text/javascript" src="js/pourBuilder.js"></script> -->
 
 
 <script>
-    var setting = 1;
+   
     //make available step options draggable
+    var setting = 1;
+    var currentOption = "waiting";
     $(document).ready(function() {
+        
         Sortable.create(availableOptions, {
             animation: 100,
             group: {
@@ -181,7 +184,9 @@ include 'inc/inc.getMachineStatus.php';
             group: 'list-1',
             handle: '.list-group-item',
             onAdd(evt) {
-
+                var itemEl = evt.item; 
+                console.log(itemEl.id);
+                //console.log(id);
                 //updateEditor();
                 setting++
 
