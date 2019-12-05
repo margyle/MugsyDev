@@ -16,6 +16,13 @@ include 'inc/inc.getMachineStatus.php';
     <title>Mugsy</title>
 
     <!-- Bootstrap CSS -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -77,8 +84,8 @@ include 'inc/inc.getMachineStatus.php';
                         </span>
                     </li>
 
-                    <li class="list-group-item list-group-item-dark text-center" id="pause">
-                        <span style="font-size: 1em; ">pause
+                    <li class="list-group-item list-group-item-dark text-center" id="stop">
+                        <span style="font-size: 1em; ">stop
                             <i class="fas fa-stop-circle" style="size: 4em"></i>
                         </span>
                     </li>
@@ -130,7 +137,6 @@ include 'inc/inc.getMachineStatus.php';
 
         </div>
         <!--end anchor list and editors-->
-
 
     </div>
     <!--end container-->
@@ -211,7 +217,7 @@ include 'inc/inc.getMachineStatus.php';
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
             var water = document.createElement('span');
-            water.innerHTML = '<div id="editorActionable">Updated form for water settings</div>';
+            water.innerHTML = '<div id=editorActionable">Updated form for water settings</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(water, el1);
 
@@ -252,13 +258,13 @@ include 'inc/inc.getMachineStatus.php';
             el1.parentNode.replaceChild(repeat, el1);
 
         }
-        if (draggedItem.id == "pause") {
+        if (draggedItem.id == "stop") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
-            var pause = document.createElement('span');
-            pause.innerHTML = '<div id="editorActionable">Updated form for pause settings</div>';
+            var stop = document.createElement('span');
+            stop.innerHTML = '<div id="editorActionable">Updated form for stop settings</div>';
             // replace el with newEL
-            el1.parentNode.replaceChild(pause, el1);
+            el1.parentNode.replaceChild(stop, el1);
 
         }
         if (draggedItem.id == "grind") {
