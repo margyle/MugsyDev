@@ -124,8 +124,8 @@ include 'inc/inc.getMachineStatus.php';
                             </div>
                             <div class="card-body">
                                 <form>
-                                    <p class="card-text"><div id="editorActionable">
-                                    </div>
+                                    <p class="card-text"><span id="editorActionable">
+                                </span>
                                     <button type="button" class="btn list-group-item-success " onClick="addStep()" style="background-color: #2ab071;color: white;">Next
                                         Step</button>
                                     <button type="button" class="btn list-group-item-danger " onClick="deleteItem();" style="background-color:#f28c8f;color:white;">Delete
@@ -166,11 +166,13 @@ include 'inc/inc.getMachineStatus.php';
 
 
 <script>
+    //this code will live in the js/pourBuilder.js file when completed-maos
    
     //make available step options draggable
     var setting = 1;
     var draggedItem; 
     var currentOption = "waiting";
+    var waterStatus = "unset";
     $(document).ready(function() {
         
         Sortable.create(availableOptions, {
@@ -220,7 +222,7 @@ include 'inc/inc.getMachineStatus.php';
     function updateEditor() {
         console.log("Editor Type: " + draggedItem.id);
 
-        if (draggedItem.id == "water") {
+        if (draggedItem.id == "water" && waterStatus == "unset") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
             var water = document.createElement('span');
@@ -243,22 +245,14 @@ include 'inc/inc.getMachineStatus.php';
             '</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(water, el1);
+            waterStatus = "set";
         
         }
         if (draggedItem.id == "cone") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
-            var cone = document.createElement('span');
+            var cone = document.createElement('div');
             cone.innerHTML = '<div id="editorActionable">'+
-            '<div class="form-check">'+
-            '<input class="form-check-input" type="checkbox" value="" id="coneClockwise">'+
-            '<label class="form-check-label" for="defaultCheck1">Clockwise</label>'+
-            '</div>'+
-            '<div class="form-check" style="padding-bottom:10px;">'+
-            '<input class="form-check-input" type="checkbox" value="" id="coneCounterClockwise">'+
-            '<label class="form-check-label" for="defaultCheck1">Counter Clockwise</label>'+
-            '</div>'+
-            '<hr>'+
             '</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(cone, el1);
