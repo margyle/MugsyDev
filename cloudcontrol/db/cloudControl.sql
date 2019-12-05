@@ -257,16 +257,24 @@ CREATE TABLE IF NOT EXISTS `recipesList` (
 --
 
 CREATE TABLE IF NOT EXISTS `recipeSteps` (
-  `stepId` int(255) NOT NULL AUTO_INCREMENT,
-  `recipeId` int(255) NOT NULL,
-  `totalSteps` int(255) NOT NULL,
-  `step` int(11) NOT NULL,
-  `waterWeight` decimal(5,2) NOT NULL,
-  `pourPattern` int(255) NOT NULL,
-  `stepTime` int(255) NOT NULL,
-  `notes` varchar(255) NOT NULL,
+  `stepId` int(36) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `recipeId` int(36) NOT NULL,
+  `grindSize` decimal(5,2) DEFAULT NULL,
+  `waterWeight` decimal(6,2) DEFAULT NULL,
+  `WaterFlowRate` decimal(4,2) DEFAULT NULL,
+  `waterTemp` decimal(5,2) DEFAULT NULL,
+  `coneDirection` char(2) DEFAULT NULL,
+  `coneDistance` int(11) DEFAULT NULL,
+  `pauseTime` decimal(4,2) DEFAULT NULL,
+  `repeatValue` int(11) DEFAULT NULL,
+  `stepTime` decimal(4,2) DEFAULT NULL,
+  `stepType` varchar(11) DEFAULT NULL,
+  `spoutStartPosition` decimal(5,2) DEFAULT NULL,
+  `SpoutEndPosition` decimal(5,2) DEFAULT NULL,
+  `totalSteps` int(11) DEFAULT NULL,
+  `stepNumber` int(11) DEFAULT NULL,
   PRIMARY KEY (`stepId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
