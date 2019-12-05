@@ -166,6 +166,7 @@ include 'inc/inc.getMachineStatus.php';
 
 
 <script>
+    //this code will live in the js/pourBuilder.js file
    
     //make available step options draggable
     var setting = 1;
@@ -224,8 +225,8 @@ include 'inc/inc.getMachineStatus.php';
         if (draggedItem.id == "water" && waterStatus == "unset") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
-            var water = document.createElement('span');
-            water.innerHTML = '<div id=editorActionable">'+
+            var water = document.createElement('div');
+            water.innerHTML = '<div id="editorActionable">Settings'+
             '<div class="form-group row" style="padding-left:0px; padding-top: 0px">'+
             '<label class="col-sm-4 col-form-label">Total Milliliters:</label>'+
             '<select class="form-control col-sm-4" id="waterWeightMl">'+
@@ -245,61 +246,93 @@ include 'inc/inc.getMachineStatus.php';
             // replace el with newEL
             el1.parentNode.replaceChild(water, el1);
             waterStatus = "set";
+            el1 = null;
         
         }
         if (draggedItem.id == "cone") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
             var cone = document.createElement('div');
-            cone.innerHTML = '<div id="editorActionable">'+
-            '</div>';
+            cone.innerHTML = '<div id="editorActionable">Direction:'+
+            '<div class="form-group row" style="padding-left:15px; padding-top: 10px">'+
+            '<div class="form-check form-check-inline">'+
+            '<input class="form-check-input" type="radio" name="coneDirectionCW" id="Clockwise" value="CW">'+
+            '<label class="form-check-label" for="coneDirectionCW">Clockwise</label>'+
+            '</div>'+
+            '<div class="form-check form-check-inline">'+
+            '<input class="form-check-input" type="radio" name="coneDirectionCC" id="Clockwise" value="CC">'+
+            '<label class="form-check-label" for="coneDirectionCC">Counter Clockwise</label>'+
+            '</div>'+
+            '</div>'+
+            '<div class="form-group row" style="padding-left:0px; padding-top: 0px">'+
+            '<label class="col-sm-4 col-form-label">Distance:</label>'+
+            '<select class="form-control col-sm-4" id="waterWeightMl">'+
+            '<option value="45">45° </option>'+
+            '<option value="90">90° Quarter Turn</option>'+
+            '<option value="135">135° </option>'+
+            '<option value="180">180° Half Turn</option>'+
+            '<option value="225">225°</option>'+
+            '<option value="270">270°</option>'+
+            '<option value="315">315°</option>'+
+            '<option value="360">360° Complete Turn</option>'+
+            '</select>'+
+            '</div>'+
+            '<hr></div>';
+
+
             // replace el with newEL
             el1.parentNode.replaceChild(cone, el1);
+            el1 = null;
 
         }
         if (draggedItem.id == "spout") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
-            var spout = document.createElement('span');
+            var spout = document.createElement('div');
             spout.innerHTML = '<div id="editorActionable">Updated form for spout settings</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(spout, el1);
+            el1 = null;
 
         }
         if (draggedItem.id == "time") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
-            var time = document.createElement('span');
+            var time = document.createElement('div');
             time.innerHTML = '<div id="editorActionable">Updated form for time settings</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(time, el1);
+            el1 = null;
 
         }
         if (draggedItem.id == "repeat") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
-            var repeat = document.createElement('span');
+            var repeat = document.createElement('div');
             repeat.innerHTML = '<div id="editorActionable">Updated form for repeat settings</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(repeat, el1);
+            el1 = null;
 
         }
         if (draggedItem.id == "stop") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
-            var stop = document.createElement('span');
+            var stop = document.createElement('div');
             stop.innerHTML = '<div id="editorActionable">Updated form for stop settings</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(stop, el1);
+            el1 = null;
 
         }
         if (draggedItem.id == "grind") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
-            var grind = document.createElement('span');
+            var grind = document.createElement('div');
             grind.innerHTML = '<div id="editorActionable">Updated form for grind settings</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(grind, el1);
+            el1 = null;
 
         }
     }
