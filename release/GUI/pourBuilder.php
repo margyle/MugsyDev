@@ -124,13 +124,14 @@ include 'inc/inc.getMachineStatus.php';
                                 Step Editor
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form name="steps">
                                     <p class="card-text"><span id="editorActionable">
                                         Start with Cone<br>
                                         </span>
-                                        <button type="button" class="btn list-group-item-success " onClick="addStep()" style="background-color: #2ab071;color: white;">Next
+                                        <button type="button" class="btn list-group-item-success shadow" style="background-color: #7c75b2;color: white;">Save Values</button>
+                                        <button type="button" class="btn list-group-item-success shadow" onClick="addStep()" style="background-color: #2ab071;color: white;">Next
                                             Step</button>
-                                        <button type="button" class="btn list-group-item-danger " onClick="deleteItem();" style="background-color:#f28c8f;color:white;">Delete
+                                        <button type="button" class="btn list-group-item-danger shadow" onClick="deleteItem();" style="background-color:#f28c8f;color:white;">Delete
                                             Step</button>
                                 </form>
                             </div>
@@ -194,6 +195,7 @@ include 'inc/inc.getMachineStatus.php';
             sort: false,
             filter: '.sortable-disabled',
             onMove: function(evt) {
+                getInputs();
                 // if (evt.item > 0) {
                 //     return false;
                 // }
@@ -235,7 +237,7 @@ include 'inc/inc.getMachineStatus.php';
             water.innerHTML = '<div id="editorActionable"><b>Water Settings</b><hr>' +
             '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
             '<label class="col-sm-4 col-form-label">Total Milliliters:</label>' +
-            '<input type="number" class="form-control col-sm-4" step="5.00" value="50">'+
+            '<input type="number" class="form-control col-sm-4" step="5.00" value="50" id="waterWeight" name="waterWeight">'+
             '</div>' +
             '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
             '<label class="col-sm-4 col-form-label">Flow Rate:</label>' +
@@ -346,6 +348,10 @@ include 'inc/inc.getMachineStatus.php';
             el1 = null;
 
         }
+    }
+
+    function getInputs(){
+       
     }
 </script>
 
