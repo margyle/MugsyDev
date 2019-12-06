@@ -121,7 +121,7 @@ include 'inc/inc.getMachineStatus.php';
                     <div class="col-md-14">
                         <div class="card shadow">
                             <div class="card-header" id="editorHeader" style="background: #00b7ee;color: white;">
-                                Step Editor:
+                                Step Editor
                             </div>
                             <div class="card-body">
                                 <form>
@@ -228,27 +228,21 @@ include 'inc/inc.getMachineStatus.php';
     function updateEditor() {
         console.log("Editor Type: " + draggedItem.id);
 
-        if (draggedItem.id == "water" && waterStatus == "unset") {
+        if (draggedItem.id == "water") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
             var water = document.createElement('div');
-            water.innerHTML = '<div id="editorActionable">Settings' +
-                '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
-                '<label class="col-sm-4 col-form-label">Total Milliliters:</label>' +
-                '<select class="form-control col-sm-4" id="waterWeightMl">' +
-                '<option>50</option>' +
-                '<option>10</option>' +
-                '</select>' +
-                '</div>' +
-                '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
-                '<label class="col-sm-4 col-form-label">Flow Rate:</label>' +
-                '<select class="form-control col-sm-4" id="flowRateMl">' +
-                '<option>5</option>' +
-                '<option>10</option>' +
-                '</select>' +
-                '</div>' +
-                '<hr>' +
-                '</div>';
+            water.innerHTML = '<div id="editorActionable"><b>Water Settings</b><hr>' +
+            '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
+            '<label class="col-sm-4 col-form-label">Total Milliliters:</label>' +
+            '<input type="number" class="form-control col-sm-4" step="5.00" value="50">'+
+            '</div>' +
+            '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
+            '<label class="col-sm-4 col-form-label">Flow Rate:</label>' +
+            '<input type="number" class="form-control col-sm-4" step="0.10" value="4.00">'+
+            '</div>' +
+            '<hr>' +
+            '</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(water, el1);
             waterStatus = "set";
