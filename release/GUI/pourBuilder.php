@@ -26,6 +26,7 @@ include 'inc/inc.getMachineStatus.php';
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 
+
 </head>
 
 <body>
@@ -125,11 +126,12 @@ include 'inc/inc.getMachineStatus.php';
                             <div class="card-body">
                                 <form>
                                     <p class="card-text"><span id="editorActionable">
-                                </span>
-                                    <button type="button" class="btn list-group-item-success " onClick="addStep()" style="background-color: #2ab071;color: white;">Next
-                                        Step</button>
-                                    <button type="button" class="btn list-group-item-danger " onClick="deleteItem();" style="background-color:#f28c8f;color:white;">Delete
-                                        Step</button>
+                                        Start with Cone<br>
+                                        </span>
+                                        <button type="button" class="btn list-group-item-success " onClick="addStep()" style="background-color: #2ab071;color: white;">Next
+                                            Step</button>
+                                        <button type="button" class="btn list-group-item-danger " onClick="deleteItem();" style="background-color:#f28c8f;color:white;">Delete
+                                            Step</button>
                                 </form>
                             </div>
                         </div>
@@ -158,6 +160,8 @@ include 'inc/inc.getMachineStatus.php';
 
 <script src="js/bootstrap.bundle.js.map"></script>
 
+<script src="js/rangeslider.js/rangeslider.min.js"></script>
+
 <script type="text/javascript" src="js/vendor/Sortable.js"></script>
 
 <link href="css/fa/css/all.css" rel="stylesheet">
@@ -166,13 +170,15 @@ include 'inc/inc.getMachineStatus.php';
 
 
 <script>
-    //this code will live in the js/pourBuilder.js file when completed-maos
-   
+    //this code will live in the js/pourBuilder.js file
+    //set up sliders
+
     //make available step options draggable
     var setting = 1;
-    var draggedItem; 
+    var draggedItem;
     var currentOption = "waiting";
     var waterStatus = "unset";
+
     $(document).ready(function() {
         
         Sortable.create(availableOptions, {
@@ -187,11 +193,11 @@ include 'inc/inc.getMachineStatus.php';
             handle: '.list-group-item',
             sort: false,
             filter: '.sortable-disabled',
-            onMove: function (evt) {
-            // if (evt.item > 0) {
-            //     return false;
-            // }
-        }
+            onMove: function(evt) {
+                // if (evt.item > 0) {
+                //     return false;
+                // }
+            }
             //chosenClass: 'active',
         });
 
@@ -200,7 +206,7 @@ include 'inc/inc.getMachineStatus.php';
             group: 'list-1',
             handle: '.list-group-item',
             onAdd(evt) {
-                draggedItem = evt.item; 
+                draggedItem = evt.item;
                 //console.log(draggedItem.id);
                 updateEditor();
                 setting++
@@ -225,82 +231,125 @@ include 'inc/inc.getMachineStatus.php';
         if (draggedItem.id == "water" && waterStatus == "unset") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
-            var water = document.createElement('span');
-            water.innerHTML = '<div id=editorActionable">'+
-            '<div class="form-group row" style="padding-left:0px; padding-top: 0px">'+
-            '<label class="col-sm-4 col-form-label">Total Milliliters:</label>'+
-            '<select class="form-control col-sm-4" id="waterWeightMl">'+
-            '<option>50</option>'+
-            '<option>10</option>'+
-            '</select>'+
-            '</div>'+
-            '<div class="form-group row" style="padding-left:0px; padding-top: 0px">'+
-            '<label class="col-sm-4 col-form-label">Flow Rate:</label>'+
-            '<select class="form-control col-sm-4" id="flowRateMl">'+
-            '<option>5</option>'+
-            '<option>10</option>'+
-            '</select>'+
-            '</div>'+
-            '<hr>'+
-            '</div>';
+            var water = document.createElement('div');
+            water.innerHTML = '<div id="editorActionable">Settings' +
+                '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
+                '<label class="col-sm-4 col-form-label">Total Milliliters:</label>' +
+                '<select class="form-control col-sm-4" id="waterWeightMl">' +
+                '<option>50</option>' +
+                '<option>10</option>' +
+                '</select>' +
+                '</div>' +
+                '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
+                '<label class="col-sm-4 col-form-label">Flow Rate:</label>' +
+                '<select class="form-control col-sm-4" id="flowRateMl">' +
+                '<option>5</option>' +
+                '<option>10</option>' +
+                '</select>' +
+                '</div>' +
+                '<hr>' +
+                '</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(water, el1);
             waterStatus = "set";
-        
+            el1 = null;
+
         }
         if (draggedItem.id == "cone") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
             var cone = document.createElement('div');
-            cone.innerHTML = '<div id="editorActionable">'+
-            '</div>';
+            cone.innerHTML = '<div id="editorActionable">Direction:' +
+                '<div class="form-group row" style="padding-left:15px; padding-top: 10px">' +
+                '<div class="form-check form-check-inline">' +
+                '<input class="form-check-input" type="radio" name="coneDirectionCW" id="Clockwise" value="CW">' +
+                '<label class="form-check-label" for="coneDirectionCW">Clockwise</label>' +
+                '</div>' +
+                '<div class="form-check form-check-inline">' +
+                '<input class="form-check-input" type="radio" name="coneDirectionCC" id="Clockwise" value="CC">' +
+                '<label class="form-check-label" for="coneDirectionCC">Counter Clockwise</label>' +
+                '</div>' +
+                '</div>' +
+                '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
+                '<label class="col-sm-4 col-form-label">Distance:</label>' +
+                '<select class="form-control col-sm-4" id="waterWeightMl">' +
+                '<option value="45">45° </option>' +
+                '<option value="90">90° Quarter Turn</option>' +
+                '<option value="135">135° </option>' +
+                '<option value="180">180° Half Turn</option>' +
+                '<option value="225">225°</option>' +
+                '<option value="270">270°</option>' +
+                '<option value="315">315°</option>' +
+                '<option value="360">360° Complete Turn</option>' +
+                '</select>' +
+                '</div>' +
+                '<hr></div>';
+
+
             // replace el with newEL
             el1.parentNode.replaceChild(cone, el1);
+            el1 = null;
 
         }
         if (draggedItem.id == "spout") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
-            var spout = document.createElement('span');
-            spout.innerHTML = '<div id="editorActionable">Updated form for spout settings</div>';
+            var spout = document.createElement('div');
+            spout.innerHTML = '<div id="editorActionable">Spout Movement:' +
+                '<div class="form-group row col-sm-8" style="padding-left:15px; padding-top: 10px">' +
+                //'<label for="range">Start Position</label>'+
+                '<label for="startPos">Start Position:</label>'+
+                '<input type="range" class="custom-range" min="1" max="180" id="startPos">'+
+                '<br><hr>'+
+                '<label for="endPos">End Position:</label>'+
+                '<input type="range" class="custom-range" min="1" max="180" id="endPos">'+
+                '</div>';  
+                // '<div class="col-sm-8">' +            
+                // 'Range Slider' +
+                // '</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(spout, el1);
+            el1 = null;
 
         }
         if (draggedItem.id == "time") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
-            var time = document.createElement('span');
+            var time = document.createElement('div');
             time.innerHTML = '<div id="editorActionable">Updated form for time settings</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(time, el1);
+            el1 = null;
 
         }
         if (draggedItem.id == "repeat") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
-            var repeat = document.createElement('span');
+            var repeat = document.createElement('div');
             repeat.innerHTML = '<div id="editorActionable">Updated form for repeat settings</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(repeat, el1);
+            el1 = null;
 
         }
         if (draggedItem.id == "stop") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
-            var stop = document.createElement('span');
+            var stop = document.createElement('div');
             stop.innerHTML = '<div id="editorActionable">Updated form for stop settings</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(stop, el1);
+            el1 = null;
 
         }
         if (draggedItem.id == "grind") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
-            var grind = document.createElement('span');
+            var grind = document.createElement('div');
             grind.innerHTML = '<div id="editorActionable">Updated form for grind settings</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(grind, el1);
+            el1 = null;
 
         }
     }
