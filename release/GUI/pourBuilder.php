@@ -133,7 +133,7 @@ include 'inc/inc.getMachineStatus.php';
                                         Start with Cone<br>
                                         </span>
                                         <button type="button" class="btn list-group-item-success shadow" style="background-color: #7c75b2;color: white;" onClick="getInputs()">Save Values</button>
-                                        <button type="button" class="btn list-group-item-success shadow" onClick="addStep()" style="background-color: #2ab071;color: white;">Next
+                                        <button type="button" class="btn list-group-item-success shadow" onClick="postStep()" style="background-color: #2ab071;color: white;">Next
                                             Step</button>
                                         <button type="button" class="btn list-group-item-danger shadow" onClick="deleteItem();" style="background-color:#f28c8f;color:white;">Delete
                                             Step</button>
@@ -392,17 +392,28 @@ include 'inc/inc.getMachineStatus.php';
         console.log(draggedItem.id)
         document.getElementById("json").innerHTML = JSON.stringify(settingsObject, undefined, 2);
     }
-
     
-    
-    function addStep() {
+    function addStepCount() {
         //add step count total at top right
         var ul = document.getElementById('stepCount');
         ul.innerHTML += '<liclass="list-group-item"> <a href="#" class="badge badge-success shadow" style="background-color: #7c75b2;color: white;">' + stepCount + '</a></li>';
         stepCount++;
+    }
 
-        }
+    function postStep(){
+        $.ajax({
+            url: 'inc/inc.updateRecipeStep.php',
+            data: settingsObject,
+            type: 'POST',
+            success: function(response) {
+                console.log("RESPONSE: " + response);
+            }
+            });
+            //update display step count
+            addStepCount();
+    }
     
+
     
 </script>
 
