@@ -176,11 +176,11 @@ include 'inc/inc.getMachineStatus.php';
 
     //make available step options draggable
     var setting = 1;
-    var draggedItem;
+    var draggedItem = "grind";
     var currentOption = "waiting";
     var waterStatus = "unset";
     var settingsObject = {};
-
+    updateEditor();
     $(document).ready(function() {
         
         Sortable.create(availableOptions, {
@@ -339,18 +339,28 @@ include 'inc/inc.getMachineStatus.php';
             el1 = null;
 
         }
-        if (draggedItem.id == "grind") {
+        if (draggedItem == "grind") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
             var grind = document.createElement('div');
-            grind.innerHTML = '<div id="editorActionable">Updated form for grind settings</div>';
+            grind.innerHTML = '<div id="editorActionable"><b>Grind Settings</b><hr>' +
+            '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
+            '<label class="col-sm-4 col-form-label">Total Milligrams:</label>' +
+            '<input type="number" class="form-control col-sm-4" step="1.00" value="30" id="coffeeWeight" name="coffeeWeight">'+
+            '</div>' +
+            '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
+            '<label class="col-sm-4 col-form-label">Grind Size:</label>' +
+            '<input type="number" class="form-control col-sm-4" step="1" value="7.00" id="grindSize" min ="1" max="10" name="grindSize">'+
+            '</div>' +
+            '<hr>' +
+            '</div>';
             // replace el with newEL
             el1.parentNode.replaceChild(grind, el1);
             el1 = null;
 
         }
     }
-    //getInputs(): grab entered step values and add to the settingsObject, then display the values
+    //getInputs(): grab entered values and add to the settingsObject, then display the values
     function getInputs(){
         var inputs = document.querySelectorAll('input,select');    
         for (var i = 0; i < inputs.length; i++) {
