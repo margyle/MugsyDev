@@ -23,6 +23,7 @@ include 'inc/inc.getMachineStatus.php';
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 
@@ -34,19 +35,22 @@ include 'inc/inc.getMachineStatus.php';
     <div class="container">
 
         <div class="row">
-            <div class="col-md-12" style="padding-top: 18px">
+            <div class="col-md-12" style="padding-top: 10px">
                 <span style="font-family: bebas;font-size: 17pt;color: #707070;">Pour Builder</span>
+                <span class="float-right" >
+                <ul class="list group list-group-horizontal-sm" name="stepCount" id="stepCount">
+                </ul>       
+    </span>
+
+      
             </div>
-            <div class="col-md-12" style="padding-top: 8px">
-                <div class="progress shadow" id="prog" style="height: 20px;">
-                    <div class="progress-bar progress-bar-striped bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Step 1
-                    </div>
-                </div>
+            <div class="col-md-12" style="padding-top: 0px">
+
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-12" style="padding-top: 24px;">
+            <div class="col-md-12" style="padding-top: 0px;">
 
                 <ul class="list-group list-group-horizontal shadow" id="availableOptions" style="width:100%;">
 
@@ -180,6 +184,10 @@ include 'inc/inc.getMachineStatus.php';
     var currentOption = "waiting";
     var waterStatus = "unset";
     var settingsObject = {};
+    var steps = 1;
+    var stepCount = 1;
+
+
     updateEditor();
     $(document).ready(function() {
         
@@ -384,6 +392,18 @@ include 'inc/inc.getMachineStatus.php';
         console.log(draggedItem.id)
         document.getElementById("json").innerHTML = JSON.stringify(settingsObject, undefined, 2);
     }
+
+    
+    
+    function addStep() {
+        //add step count total at top right
+        var ul = document.getElementById('stepCount');
+        ul.innerHTML += '<liclass="list-group-item"> <a href="#" class="badge badge-success shadow" style="background-color: #7c75b2;color: white;">' + stepCount + '</a></li>';
+        stepCount++;
+
+        }
+    
+    
 </script>
 
 </html>
