@@ -121,14 +121,14 @@ include 'inc/inc.getMachineStatus.php';
                     <div class="col-md-14">
                         <div class="card shadow">
                             <div class="card-header" id="editorHeader" style="background: #00b7ee;color: white;">
-                                Step Editor
+                                Step Editor: &nbsp;<span id="json" style="color:black;font-size:14px;"></span>
                             </div>
                             <div class="card-body">
-                                <form name="steps">
+                                <form name="steps" id="steps">
                                     <p class="card-text"><span id="editorActionable">
                                         Start with Cone<br>
                                         </span>
-                                        <button type="button" class="btn list-group-item-success shadow" style="background-color: #7c75b2;color: white;">Save Values</button>
+                                        <button type="button" class="btn list-group-item-success shadow" style="background-color: #7c75b2;color: white;" onClick="getInputs()">Save Values</button>
                                         <button type="button" class="btn list-group-item-success shadow" onClick="addStep()" style="background-color: #2ab071;color: white;">Next
                                             Step</button>
                                         <button type="button" class="btn list-group-item-danger shadow" onClick="deleteItem();" style="background-color:#f28c8f;color:white;">Delete
@@ -179,6 +179,7 @@ include 'inc/inc.getMachineStatus.php';
     var draggedItem;
     var currentOption = "waiting";
     var waterStatus = "unset";
+    var settingsObject = {};
 
     $(document).ready(function() {
         
@@ -195,7 +196,7 @@ include 'inc/inc.getMachineStatus.php';
             sort: false,
             filter: '.sortable-disabled',
             onMove: function(evt) {
-                getInputs();
+                //getInputs();
                 // if (evt.item > 0) {
                 //     return false;
                 // }
@@ -241,7 +242,7 @@ include 'inc/inc.getMachineStatus.php';
             '</div>' +
             '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
             '<label class="col-sm-4 col-form-label">Flow Rate:</label>' +
-            '<input type="number" class="form-control col-sm-4" step="0.10" value="4.00">'+
+            '<input type="number" class="form-control col-sm-4" step="0.10" value="4.00" id="flowRate" name="flowrate">'+
             '</div>' +
             '<hr>' +
             '</div>';
@@ -258,17 +259,17 @@ include 'inc/inc.getMachineStatus.php';
             cone.innerHTML = '<div id="editorActionable">Direction:' +
                 '<div class="form-group row" style="padding-left:15px; padding-top: 10px">' +
                 '<div class="form-check form-check-inline">' +
-                '<input class="form-check-input" type="radio" name="coneDirectionCW" id="Clockwise" value="CW">' +
+                '<input class="form-check-input" type="radio" name="coneDirection" id="coneDirection" value="CW">' +
                 '<label class="form-check-label" for="coneDirectionCW">Clockwise</label>' +
                 '</div>' +
                 '<div class="form-check form-check-inline">' +
-                '<input class="form-check-input" type="radio" name="coneDirectionCC" id="Clockwise" value="CC">' +
+                '<input class="form-check-input" type="radio" name="coneDirection" id="coneDirection" value="CC">' +
                 '<label class="form-check-label" for="coneDirectionCC">Counter Clockwise</label>' +
                 '</div>' +
                 '</div>' +
                 '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
                 '<label class="col-sm-4 col-form-label">Distance:</label>' +
-                '<select class="form-control col-sm-4" id="waterWeightMl">' +
+                '<select class="form-control col-sm-4" id="coneDistance" name="coneDistance">' +
                 '<option value="45">45° </option>' +
                 '<option value="90">90° Quarter Turn</option>' +
                 '<option value="135">135° </option>' +
@@ -349,9 +350,15 @@ include 'inc/inc.getMachineStatus.php';
 
         }
     }
-
+    //getInputs(): grab entered step values and add to the settingsObject, then display the values
     function getInputs(){
-       
+        var inputs = document.querySelectorAll('input,select');    
+        for (var i = 0; i < inputs.length; i++) {
+        settingsObject[inputs[i].id] = inputs[i].value;
+        }
+        console.log(settingsObject)
+        console.log(draggedItem.id)
+        document.getElementById("json").innerHTML = JSON.stringify(settingsObject, undefined, 2);
     }
 </script>
 
