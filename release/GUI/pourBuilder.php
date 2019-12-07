@@ -256,7 +256,7 @@ include 'inc/inc.getMachineStatus.php';
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
             var cone = document.createElement('div');
-            cone.innerHTML = '<div id="editorActionable">Direction:' +
+            cone.innerHTML = '<div id="editorActionable"><b>Direction:</b><hr>' +
                 '<div class="form-group row" style="padding-left:15px; padding-top: 10px">' +
                 '<div class="form-check form-check-inline">' +
                 '<input class="form-check-input" type="radio" name="coneDirection" id="coneDirection" value="CW">' +
@@ -292,7 +292,7 @@ include 'inc/inc.getMachineStatus.php';
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
             var spout = document.createElement('div');
-            spout.innerHTML = '<div id="editorActionable">Spout Movement:' +
+            spout.innerHTML = '<div id="editorActionable"><b>Spout Movement:</b><hr>' +
                 '<div class="form-group row col-sm-8" style="padding-left:15px; padding-top: 10px">' +
                 //'<label for="range">Start Position</label>'+
                 '<label for="startPos">Start Position:</label>'+
@@ -300,10 +300,9 @@ include 'inc/inc.getMachineStatus.php';
                 '<br><hr>'+
                 '<label for="endPos">End Position:</label>'+
                 '<input type="range" class="custom-range" min="1" max="180" id="endPos">'+
-                '</div>';  
-                // '<div class="col-sm-8">' +            
-                // 'Range Slider' +
-                // '</div>';
+                '</div>'
+                '<hr></div>';  
+
             // replace el with newEL
             el1.parentNode.replaceChild(spout, el1);
             el1 = null;
@@ -313,7 +312,12 @@ include 'inc/inc.getMachineStatus.php';
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
             var time = document.createElement('div');
-            time.innerHTML = '<div id="editorActionable">Updated form for time settings</div>';
+            time.innerHTML = '<div id="editorActionable"><b>Step Timer:</b><hr>' +
+            '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
+            '<label class="col-sm-4 col-form-label">Total Seconds:</label>' +
+            '<input type="number" class="form-control col-sm-4" step="1.00" value="30" id="totalSeconds" name="totalSeconds">'+
+            '</div>' +
+            '<hr></div>';
             // replace el with newEL
             el1.parentNode.replaceChild(time, el1);
             el1 = null;
@@ -323,7 +327,12 @@ include 'inc/inc.getMachineStatus.php';
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
             var repeat = document.createElement('div');
-            repeat.innerHTML = '<div id="editorActionable">Updated form for repeat settings</div>';
+            repeat.innerHTML = '<div id="editorActionable"><b>Repeat Step:</b><hr>' +
+            '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
+            '<label class="col-sm-4 col-form-label">Repeats:</label>' +
+            '<input type="number" class="form-control col-sm-4" step="1.00" value="1" id="totalRepeats" name="totalRepeats">'+
+            '</div>' +
+            '<hr></div>';
             // replace el with newEL
             el1.parentNode.replaceChild(repeat, el1);
             el1 = null;
@@ -333,13 +342,18 @@ include 'inc/inc.getMachineStatus.php';
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
             var stop = document.createElement('div');
-            stop.innerHTML = '<div id="editorActionable">Updated form for stop settings</div>';
+            stop.innerHTML = '<div id="editorActionable"><b>Pause Timer:</b><hr>' +
+            '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
+            '<label class="col-sm-4 col-form-label">Total Seconds:</label>' +
+            '<input type="number" class="form-control col-sm-4" step="1.00" value="15" id="pauseSeconds" name="pauseSeconds">'+
+            '</div>' +
+            '<hr></div>';
             // replace el with newEL
             el1.parentNode.replaceChild(stop, el1);
             el1 = null;
 
         }
-        if (draggedItem == "grind") {
+        if (draggedItem == "grind" || draggedItem.id == "grind") {
             //console.log(setting == 1);
             var el1 = document.querySelector('#editorActionable');
             var grind = document.createElement('div');
@@ -350,7 +364,7 @@ include 'inc/inc.getMachineStatus.php';
             '</div>' +
             '<div class="form-group row" style="padding-left:0px; padding-top: 0px">' +
             '<label class="col-sm-4 col-form-label">Grind Size:</label>' +
-            '<input type="number" class="form-control col-sm-4" step="1" value="7.00" id="grindSize" min ="1" max="10" name="grindSize">'+
+            '<input type="number" class="form-control col-sm-4" step="1" value="7" id="grindSize" min ="1" max="10" name="grindSize">'+
             '</div>' +
             '<hr>' +
             '</div>';
