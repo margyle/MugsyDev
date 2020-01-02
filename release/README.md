@@ -13,7 +13,7 @@ It can also be used to build out new control systems for all types of hardware a
 ##### GUI Requirements
 - **Sortable.JS**: [https://github.com/SortableJS/Sortable](https://github.com/SortableJS/Sortable)
 - **Popper.JS**: [https://github.com/popperjs/popper.js](https://github.com/popperjs/popper.js)
-- **Boostrap**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
+- **Bootstrap**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **JQuery**: [https://github.com/jquery/jquery](https://github.com/jquery/jquery)
 
 
