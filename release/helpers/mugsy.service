@@ -1,0 +1,18 @@
+# this systemd service is not yet complete and should not be used
+[Unit]
+Description=Mugsy Interface
+Requires=graphical.target
+After=graphical.target
+
+[Service]
+Environment=DISPLAY=:0.0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+ExecStartPre=/var/mugsy/helpers/startup.sh
+ExecStart=usr/bin/chromium-browser --no-sandbox --no-first-run --hide-scrollbars --noerrdialogs --start-fullscreen \
+ --start-maximized --disable-notifications --disable-infobars --kiosk https://localhost/mugsy/interface/home.php
+Restart=on-abort
+User=pi
+Group=pi
+
+[Install]
+WantedBy=graphical.target
