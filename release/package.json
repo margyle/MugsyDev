@@ -1,0 +1,10 @@
+{
+  "name": "mugsy",
+  "version": "0.1.0",
+  "description": "Robot Coffee For All",
+  "main": "index.js",
+  "repository": "https://github.com/margyle/mugsyInstaller",
+  "author": "M. Argyle",
+  "license": "MPL 2.0",
+  "private": false
+}
