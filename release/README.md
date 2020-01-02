@@ -11,8 +11,8 @@ It can also be used to build out new control systems for all types of hardware a
 - **Commander**: A set of serial controlled Arduino scripts
 
 ##### GUI Requirements
-- **Sortable.JS**:[https://github.com/SortableJS/Sortable](https://github.com/SortableJS/Sortable)
-- **Popper.JS**:[https://github.com/popperjs/popper.js](https://github.com/popperjs/popper.js)
+- **Sortable.JS**: [https://github.com/SortableJS/Sortable](https://github.com/SortableJS/Sortable)
+- **Popper.JS**: [https://github.com/popperjs/popper.js](https://github.com/popperjs/popper.js)
 
 
 
