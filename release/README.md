@@ -10,6 +10,12 @@ It can also be used to build out new control systems for all types of hardware a
 - **GUI**: JS and HTML interface files and framework.
 - **Commander**: A set of serial controlled Arduino scripts
 
+##### GUI Requirements
+- **Sortable.JS**:[https://github.com/SortableJS/Sortable](https://github.com/SortableJS/Sortable)
+- **Popper.JS**:[https://github.com/popperjs/popper.js](https://github.com/popperjs/popper.js)
+
+
+
 ##### Mugsy OS is available in 3 formats
 - A ready to run disk image built on top of Raspbian GNU/Linux(v9.6).
 - A docker container.
