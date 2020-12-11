@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Require composer autoloader
-//include 'vendor/autoload.php'; #TODO prep local oAuth 
+//include 'vendor/autoload.php'; #TODO prep local oAuth
 include 'inc/inc.db.php';
 // include 'inc/inc.getRecipes.php';
 // include 'inc/inc.getMachineStatus.php';
@@ -39,10 +39,10 @@ include 'inc/inc.db.php';
                 <span style="font-family: bebas;font-size: 17pt;color: #707070;">Pour Builder</span>
                 <span class="float-right" >
                 <ul class="list group list-group-horizontal-sm" name="stepCount" id="stepCount">
-                </ul>       
+                </ul>
     </span>
 
-      
+
             </div>
             <div class="col-md-12" style="padding-top: 0px">
 
@@ -157,13 +157,9 @@ include 'inc/inc.db.php';
 
 <script src="js/vendor/jquery-3.4.1.min.js"></script>
 
-<script src="js/vendor/popper.min.js"></script>
-
 <script src="js/bootstrap.min.js"></script>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
-
-<script src="js/bootstrap.bundle.js.map"></script>
 
 <script src="js/rangeslider.js/rangeslider.min.js"></script>
 
