@@ -32,7 +32,11 @@ HX711 scale;
 
 //--------------------------
 // Define cone stepper
-AccelStepper stepper1; // Defaults to AccelStepper::FULL4WIRE (4 pins) on 2, 3, 4, 5
+#define dirPin 8
+#define stepPin 9
+#define motorInterfaceType 1
+
+AccelStepper stepper1 = AccelStepper(motorInterfaceType, stepPin, dirPin);
 //--------------------------
 
 
