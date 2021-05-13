@@ -8,7 +8,7 @@
 
 //--------------------------
 //Temp sensor
-#define ONE_WIRE_BUS 3
+#define ONE_WIRE_BUS 2
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 int deviceCount = 0;
@@ -105,8 +105,10 @@ void setup() {
     scale.tare();
     
     //set up stepper
-    stepper1.setMaxSpeed(200.0);
-    stepper1.setAcceleration(300.0);
+    stepper1.setMaxSpeed(400.0);
+    stepper1.setAcceleration(500.0);
+    stepper1.setEnablePin(A3); //v8 of brainBoard PCB
+    stepper1.setPinsInverted(false, false, true);
     
     //let Mugsy know system is online
     Serial.begin(19200);
@@ -124,6 +126,7 @@ void loop() {
   unsigned long currentMillis_stepper = millis();
   
   if (stepper1.distanceToGo() == 0) {
+    stepper1.disableOutputs(); //disable stepper to save power
     if (newData == true) {
       strcpy(tempChars, receivedChars);
       parseData();
@@ -147,7 +150,10 @@ if(channel1_interval!=0 && stepper1.distanceToGo() != 0 ){
   }
 }
 
-stepper1.run();
+
+ //stepper1.run();
+ stepper1.setSpeed(stepperSpeed);
+ stepper1.runSpeedToPosition();
 }
 
 //-------------------------- END LOOP
@@ -257,6 +263,7 @@ void getTemp(){
 //<M,0,800,60.00>
 //<M,Direction, Steps, Speed
 void moveCone() {
+    stepper1.enableOutputs(); 
     if (stepperDirection == 0){
     stepper1.move(totalSteps);}
     else {
