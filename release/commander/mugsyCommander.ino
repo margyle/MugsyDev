@@ -32,8 +32,8 @@ HX711 scale;
 
 //--------------------------
 // Define cone stepper
-#define dirPin 8
-#define stepPin 9
+#define dirPin 5
+#define stepPin 4
 #define motorInterfaceType 1
 
 AccelStepper stepper1 = AccelStepper(motorInterfaceType, stepPin, dirPin);
@@ -85,7 +85,7 @@ float weight = 0.00;
 char moveQuery[] ="M";
 char tempQuery[] ="T";
 char weightQuery[] ="W";
-//(WiFi.SSID() == ReadWifiSSID())
+
 //--------------------------
 
 
@@ -244,24 +244,25 @@ void parseData() {
 //-------------------------- START getTemp
 void getTemp(){
    sensors.requestTemperatures(); 
-   temp1 = sensors.getTempCByIndex(0);
-   temp2 = sensors.getTempCByIndex(1);
-   averageTemp = ((temp1 + temp2)/2); 
-   Serial.println(averageTemp);
-//debug
-  //   Serial.print("Sensor1: ");
-  //   Serial.println(temp1);
-  //   Serial.print("Sensor2: ");
-  //   Serial.println(temp2);
+   temp1 = sensors.getTempFByIndex(0);
+//   temp2 = sensors.getTempCByIndex(1);
+//   averageTemp = ((temp1 + temp2)/2); 
+//   Serial.println(averageTemp);
+
+//testing single temp sensor: 
+    Serial.print("Temperature is: ");
+    Serial.println(temp1);
+
 }
 //--------------------------  END getTemp
 
 
 
 //-------------------------- START moveCone
-//move cone command structure
-//<M,0,800,60.00>
-//<M,Direction, Steps, Speed
+//move cone command structure 
+//<M,0,800,60.00> <M,Direction, Steps, Speed> 
+//For direction, 0=ClockWise, 1=CounterClockwise
+
 void moveCone() {
     stepper1.enableOutputs(); 
     if (stepperDirection == 0){
@@ -287,12 +288,6 @@ void coneResponse() {
     Serial.println(totalSteps);
     Serial.print("Speed: ");
     Serial.println(stepperSpeed);
-//    Serial.print("Water Pump Interval: ");
-//    Serial.println(channel1_interval);
-//     Serial.print("Debug Comparator: ");
-//    Serial.println(stepperDirection == 0);
-//    Serial.println(queryType);
-//    Serial.println(moveQuery);
 }
 
 //-------------------------- END coneResponse
