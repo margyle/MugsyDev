@@ -1,0 +1,33 @@
+# Ignore everything in subdirectories by default
+**/
+
+# Don't ignore .gitignore files in subdirectories
+!*/.gitignore
+
+# Include specific service directories
+!/Operator/
+!/DECAF/
+!/JuneBug/
+
+# Common files to ignore
+.DS_Store
+.env
+*.log
+
+# Node.js specific ignores (if applicable)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build output directories (customize as needed)
+/build/
+/dist/
+
+# IDE and editor folders
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Operating system files
+Thumbs.db
