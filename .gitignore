@@ -4,10 +4,13 @@
 # Don't ignore .gitignore files in subdirectories
 !*/.gitignore
 
-# Include specific service directories
+# Include specific applicaton directories
 !/Operator/
+!/Operator/**
 !/DECAF/
+!/DECAF/**
 !/JuneBug/
+!/JuneBug/**
 
 # Common files to ignore
 .DS_Store
