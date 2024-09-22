@@ -8,7 +8,7 @@ You can find Mugsy's individual repos, CAD files, PCB files, and more at the off
 
 
 
-## Services
+## Applications
 
 ### Operator
 Operator is a FastAPI application designed to manage and control Mugsys hardware devices. All GPIO control is handled by Operator to keep hardware related functionality isolated from the primary DECAF API, allowing for increased hardware compatibility.
