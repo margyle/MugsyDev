@@ -33,6 +33,6 @@ spidev==3.6
 starlette==0.40.0
 typing==3.7.4.3
 typing_extensions==4.11.0
-urllib3==2.2.1
+urllib3==2.2.2
 uvicorn==0.29.0
 websockets==12.0
