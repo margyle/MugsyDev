@@ -33,7 +33,7 @@ setup(
         'charset-normalizer==3.3.2',
         'pn532pi==1.5',
         'pyserial==3.5',
-        'requests==2.31.0',
+        'requests==2.32.4',
         'spidev==3.6',
         'typing==3.7.4.3',
         'urllib3==2.2.1'
