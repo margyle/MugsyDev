@@ -27,7 +27,7 @@ setup(
         'pytest==8.1.2',
         'pytest-asyncio==0.23.6',
         'sniffio==1.3.1',
-        'starlette==0.40.0',
+        'starlette==0.47.2',
         'typing_extensions==4.11.0',
         'uvicorn==0.29.0',
         'charset-normalizer==3.3.2',
